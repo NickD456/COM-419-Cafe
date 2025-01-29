@@ -4,6 +4,19 @@ public class GameManager : MonoBehaviour
 {
     //Number of NPCs. Will change when NPC is recruited or dies.
     private int npcCount = 0;
+
+    public static GameManager Instance;
+    //Tells unity to not destroy the game manager object
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     { 
@@ -26,5 +39,10 @@ public class GameManager : MonoBehaviour
     public void SubNPC()
     {
         npcCount--;
+    }
+
+    public void GameOver()
+    {
+
     }
 }
