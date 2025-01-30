@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     //Number of NPCs. Will change when NPC is recruited or dies.
     private int npcCount = 0;
+    private int money = 0;
 
     public static GameManager Instance;
     //Tells unity to not destroy the game manager object
@@ -44,5 +45,15 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
 
+    }
+
+    public void AddMoney(moneyNum)
+    {
+        money = money + moneyNum;
+    }
+
+    private void SubMoney(moneyNum)
+    {
+        money = money - moneyNum;
     }
 }
