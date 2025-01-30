@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
         money = money + moneyNum;
     }
 
-    private void SubMoney(moneyNum)
+    public void SubMoney(moneyNum)
     {
         money = money - moneyNum;
     }
