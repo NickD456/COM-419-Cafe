@@ -5,6 +5,9 @@ public class GameManager : MonoBehaviour
     //Number of NPCs. Will change when NPC is recruited or dies.
     private int npcCount = 0;
     private int money = 0;
+    public GameObject[] npcArray;
+    private GameObject[] recruitedNPC;
+    
 
     public static GameManager Instance;
     //Tells unity to not destroy the game manager object
@@ -31,10 +34,41 @@ public class GameManager : MonoBehaviour
     }
 
     //Add NPC when recruited. NPC type and name will be handled through tags. 
-    public void AddNPC()
+    public void AddNPC(int npcNumber)
     {
-        npcCount++;
+        if (npcCount < 4)
+        {
+            switch (npcCount) 
+            {
+                case 0:
+                    recruitedNPC[0] = npcArray[npcNumber];
+                    break;
+                case 1:
+                    recruitedNPC[1] = npcArray[npcNumber];
+                    break;
+                case 2:
+                    recruitedNPC[2] = npcArray[npcNumber];
+                    break;
+                case 3:
+                    recruitedNPC[3] = npcArray[npcNumber];
+                    break;
+                default:
+                    break;
+
+            }
+            npcCount++;
+        }
+        else
+        {
+            Debug.Log("to many npc");
+        }
+
+
+
+
     }
+
+
 
     //Sub NPC when dies or dismissed. NPC type and name will be handled through tags.
     public void SubNPC()
@@ -47,12 +81,12 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void AddMoney(moneyNum)
+    public void AddMoney(int moneyNum)
     {
         money = money + moneyNum;
     }
 
-    public void SubMoney(moneyNum)
+    public void SubMoney(int moneyNum)
     {
         money = money - moneyNum;
     }
