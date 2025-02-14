@@ -7,6 +7,7 @@ public class Pickup : MonoBehaviour
     bool hasItem;
     public GameObject hands;
     private GameObject item;
+    private GameObject heldItem;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,7 +22,9 @@ public class Pickup : MonoBehaviour
         {
             if (Input.GetKeyDown("e"))
             {
-                Instantiate(item, hands.transform.position, Quaternion.identity);
+                heldItem = Instantiate(item, hands.transform.position, Quaternion.identity);
+                heldItem.transform.SetParent(hands.transform);
+                heldItem.transform.rotation = item.transform.rotation;
             }
         }
     }
@@ -32,9 +35,9 @@ public class Pickup : MonoBehaviour
         {
             canpickup = true;
             item = other.gameObject;
-            
+            Debug.Log("entered");
         }
-        Debug.Log("entered");
+        
     }
     private void OnTriggerExit(Collider other)
     {
