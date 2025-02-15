@@ -10,6 +10,7 @@ public class Pickup : MonoBehaviour
     private GameObject heldItem;
     public GameObject pickUpText;
     private bool interact;
+    private bool canInteract;
     public GameObject interactText;
     public GameObject cupPlacement;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,14 +40,11 @@ public class Pickup : MonoBehaviour
 
             }
         }
-        else if (interact == true)
+        else if (canInteract == true)
         {
             if(Input.GetKeyDown("f"))
             {
-                if (hasItem) { 
-                    heldItem.transform.position = cupPlacement.transform.position;
-                    heldItem.transform.parent = null;
-                }
+                StartInteract();
             }
         }
         else 
@@ -62,6 +60,23 @@ public class Pickup : MonoBehaviour
 
     }
 
+    private void StartInteract()
+    {
+        if (hasItem && heldItem.name == "Cup(Clone)")
+        {
+            interact = true;
+            heldItem.transform.position = cupPlacement.transform.position;
+            heldItem.transform.localScale -= new Vector3(.03f, .03f, .03f);
+            heldItem.transform.parent = null;
+
+        }
+    }
+
+    private void EndInteract()
+    {
+
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Object")
@@ -73,8 +88,9 @@ public class Pickup : MonoBehaviour
 
         if (other.gameObject.tag == "machine")
         {
-            interact = true;
+            
             interactText.SetActive(true);
+            canInteract = true;
 
         }
         
@@ -82,7 +98,7 @@ public class Pickup : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         canpickup = false; //when you leave the collider set the canpickup bool to false
-        interact = false;
+       
         pickUpText.SetActive(false);
         interactText.SetActive(false);
     }
