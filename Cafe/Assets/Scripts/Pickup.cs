@@ -13,6 +13,7 @@ public class Pickup : MonoBehaviour
     private bool canInteract;
     public GameObject interactText;
     public GameObject cupPlacement;
+    private GameObject interactableObject;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -62,7 +63,7 @@ public class Pickup : MonoBehaviour
 
     private void StartInteract()
     {
-        if (hasItem && heldItem.name == "Cup(Clone)")
+        if (hasItem && heldItem.name == "Cup(Clone)" && interactableObject.name == "coffee machine")
         {
             interact = true;
             heldItem.transform.position = cupPlacement.transform.position;
@@ -86,11 +87,12 @@ public class Pickup : MonoBehaviour
             pickUpText.SetActive(true);
         }
 
-        if (other.gameObject.tag == "machine")
+        if (other.gameObject.tag == "interactable" && heldItem.name == "Cup(Clone)")
         {
             
             interactText.SetActive(true);
             canInteract = true;
+            interactableObject = other.gameObject;
 
         }
         
