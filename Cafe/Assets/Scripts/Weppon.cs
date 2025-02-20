@@ -25,7 +25,9 @@ public class Weppon : MonoBehaviour
 
         bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward.normalized * bulletVelocity, ForceMode.Impulse);
         //destroy bullet
+
         StartCoroutine(DestroyBulletAfterTime(bullet,bulletPrefabTime));
+    
     }
 
 
@@ -33,7 +35,7 @@ public class Weppon : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         Destroy(bullet);
-
     }
 }
+    
 

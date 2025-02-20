@@ -6,12 +6,16 @@ public class bullet : MonoBehaviour
 {
 
 
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Target"))
+        // Check if the bullet collided with an object tagged "Zombie"
+        if (collision.gameObject.CompareTag("Zombie"))
         {
-            print("hit " + collision.gameObject.name + " !");
-            Destroy(gameObject);
+            // Destroy the zombie
+            Destroy(collision.gameObject);  // Destroy the zombie object that was hit
+
+            // Optionally, destroy the bullet itself
+            Destroy(gameObject);  
         }
     }
 
