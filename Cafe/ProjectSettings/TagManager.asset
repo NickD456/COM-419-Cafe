@@ -10,8 +10,8 @@ TagManager:
   - hands
   - machine
   - interactable
-  - zombie
   - bullet'
+  - play
   layers:
   - Default
   - TransparentFX
