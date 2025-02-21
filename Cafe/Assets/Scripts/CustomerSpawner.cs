@@ -13,7 +13,10 @@ public class CustomerSpawner : MonoBehaviour
     public int maxNPCsOnMap = 2; 
     public int resumeSpawnThreshold = 2;
     private int totalSpawned = 0; 
-    private List<GameObject> activeNPCs = new List<GameObject>(); 
+    private List<GameObject> activeNPCs = new List<GameObject>();
+
+    
+
 
     void Start()
     {
@@ -47,6 +50,18 @@ public class CustomerSpawner : MonoBehaviour
         if (totalSpawned < maxCustomers)
         {
             GameObject newNPC = Instantiate(npcPrefab, spawnPoint.position, Quaternion.identity);
+            int randomOrder = Random.Range(0, 2);
+
+            switch (randomOrder)
+            {
+                case 0:
+                    newNPC.AddComponent<MatchaOrder>(); 
+                    break;
+
+                case 1:
+                    newNPC.AddComponent<BrownSugarOrder>();
+                    break;
+            }
             activeNPCs.Add(newNPC);
             totalSpawned++;
 

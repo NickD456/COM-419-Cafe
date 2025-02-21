@@ -7,10 +7,13 @@ public class Pickup : MonoBehaviour
     private bool hasItem;
     private bool interact;
     private bool canInteract;
+    private bool canGive;
 
     private GameObject item;
     private GameObject heldItem;
     private GameObject interactableObject;
+    private GameObject customerHands;
+    private GameObject customer;
 
     public GameObject hands;
     public GameObject pickUpText;
@@ -21,6 +24,8 @@ public class Pickup : MonoBehaviour
     public GameObject matchaText;
     public GameObject lidText;
     public GameObject teaText;
+    public GameObject GiveText;
+
 
     private Vector3 originalItem;
 
@@ -70,15 +75,29 @@ public class Pickup : MonoBehaviour
                 StartInteract();
             }
         }
-        else 
+        else
         {
             if (Input.GetKeyDown("e"))
             {
-                if (hasItem && !interact)
+                if (hasItem)
                 {
                     DropObject();
                 }
             }
+        }
+        if (canGive)
+        {
+            if(Input.GetKeyDown("r"))
+            {
+                GiveDrink();
+            }
+        }
+        
+
+        if(customerHands == null)
+        {
+            customerHands = GameObject.FindWithTag("CustomerHands");
+            customer = GameObject.FindWithTag("Customer");
         }
     }
 
@@ -178,6 +197,12 @@ public class Pickup : MonoBehaviour
             interactableObject = other.gameObject;
              
         }
+
+        if(other.gameObject.tag == "Customer" && heldItem.name == "Cup(Clone)")
+        {
+            GiveText.SetActive(true);
+            canGive = true;
+        }
         
     }
     private void OnTriggerExit(Collider other)
@@ -186,6 +211,7 @@ public class Pickup : MonoBehaviour
 
         pickUpText.SetActive(false);
         interactText.SetActive(false);
+        canInteract = false; 
      
     }
 
@@ -193,6 +219,14 @@ public class Pickup : MonoBehaviour
     {
         Destroy(heldItem);
         hasItem = false;
+        if (drinkManager.hasLid && drinkManager.hasMilk && drinkManager.hasBrownSugar && drinkManager.hasTea)
+        {
+            Debug.Log("Order right");
+        }
+        else
+        {
+            Debug.Log("order wtromg");
+        }
     }
 
     private void GetTea()
@@ -207,14 +241,16 @@ public class Pickup : MonoBehaviour
 
             interactText.SetActive(false);
             drinkManager.SetTea();
+        Debug.Log(drinkManager.hasTea);
 
-            canInteract = false;
+        canInteract = false;
         
     }
 
     private void GetBrownSugar()
     {
         drinkManager.SetBrownSugar();
+        Debug.Log(drinkManager.hasBrownSugar);
     }
     private void GetMilk()
     {
@@ -222,16 +258,19 @@ public class Pickup : MonoBehaviour
 
         Transform child = heldItem.transform.Find("Milk liq");
         child.gameObject.SetActive(true);
+        Debug.Log(drinkManager.hasMilk);
     }
     private void GetMatcha()
     {
         drinkManager.SetMatcha();
+        Debug.Log(drinkManager.hasMatcha);
     }
     private void GetLid()
     {
         drinkManager.SetLid();
         Transform child = heldItem.transform.Find("Lid");
         child.gameObject.SetActive(true);
+        Debug.Log(drinkManager.hasLid);
     }
 
     private void HideTeaText()
@@ -254,5 +293,11 @@ public class Pickup : MonoBehaviour
     void HideMatchaText()
     {
         matchaText.SetActive(false);
+    }
+
+    void GiveDrink()
+    {
+        heldItem.transform.SetParent(customer.transform);
+        heldItem.transform.position = customerHands.transform.position;
     }
 }

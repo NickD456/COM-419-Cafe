@@ -12,6 +12,8 @@ TagManager:
   - interactable
   - zombie
   - bullet'
+  - Line Spot
+  - CustomerHands
   layers:
   - Default
   - TransparentFX

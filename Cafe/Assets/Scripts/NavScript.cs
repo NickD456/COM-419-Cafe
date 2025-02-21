@@ -6,12 +6,14 @@ public class NavScript : MonoBehaviour
   
     private NavMeshAgent agent;
     private GameObject des;
-    
+    private static DrinkManager drinkManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         des = GameObject.FindWithTag("Line Spot");
+        drinkManager = GameObject.Find("DrinkManager").GetComponent<DrinkManager>();
     }
 
     // Update is called once per frame
@@ -22,12 +24,6 @@ public class NavScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Customer") && other.gameObject.GetInstanceID() != gameObject.GetInstanceID())
-        {
-            if (other.transform.position.z > transform.position.z)
-            {
-                agent.isStopped = true;
-            }
-        }
+        
     }
 }
