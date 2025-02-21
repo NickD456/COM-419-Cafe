@@ -6,9 +6,11 @@ public class GameManager : MonoBehaviour
     private int npcCount = 0;
     private int money = 0;
     public GameObject[] npcArray;
-    private GameObject[] recruitedNPC;
+    private GameObject[] recruitedNPC;    
+    public int dayNum = 1;
+    private GameManager gameManager;
 
-    public static int dayNum = 1;
+
 
     public static GameManager Instance;
     //Tells unity to not destroy the game manager object

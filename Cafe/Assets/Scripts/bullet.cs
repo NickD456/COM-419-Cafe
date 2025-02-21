@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
+public NightEnd nightend;
+public int zombieCount;
 
 
     void OnCollisionEnter(Collision collision)
@@ -12,7 +14,9 @@ public class bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Zombie"))
         {
             // Destroy the zombie
-            Destroy(collision.gameObject);  // Destroy the zombie object that was hit
+            Destroy(collision.gameObject); 
+            nightend.zombieCount -=1;
+             // Destroy the zombie object that was hit
 
             // Optionally, destroy the bullet itself
             Destroy(gameObject);  

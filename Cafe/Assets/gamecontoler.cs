@@ -1,20 +1,22 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class gamecontoler : MonoBehaviour
 {
     public GameObject player;
     public GameObject zombie;
     public GameObject bullet;
+    public int numZom = 1;
 
-    private void OnCollisionEnter(Collision collision)
+
+    void Start()
     {
-        if(collision.gameObject.CompareTag("zombie"))
-        {
-            print("hit " + collision.gameObject.name + " !");
-            Destroy(zombie);
-            
-        }
+
     }
 
+    void Update()
+    {
+        
+    }
 
 }

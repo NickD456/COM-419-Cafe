@@ -10,10 +10,10 @@ TagManager:
   - hands
   - machine
   - interactable
-  - zombie
   - bullet'
   - Line Spot
   - CustomerHands
+  - play
   layers:
   - Default
   - TransparentFX
