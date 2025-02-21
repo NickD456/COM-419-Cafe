@@ -1768,6 +1768,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ZombiePrefab: {fileID: 7686161970071161140, guid: d22885b46734f2c45b0800895810d373, type: 3}
   zombieSpawn: {fileID: 1943865021}
+  npcPrefab: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnInterval: 3
+  maxCustomers: 9
+  maxNPCsOnMap: 9
+  resumeSpawnThreshold: 3
 --- !u!1 &2004737389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,6 +1872,10 @@ PrefabInstance:
     - target: {fileID: 6724323035553317914, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6724323035553317919, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
+      propertyPath: m_AngularDrag
+      value: Infinity
       objectReference: {fileID: 0}
     - target: {fileID: 6724323035553317919, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
       propertyPath: m_Interpolate

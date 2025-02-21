@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 
 public class ZombieSpawn : MonoBehaviour
@@ -9,31 +10,84 @@ public class ZombieSpawn : MonoBehaviour
     private GameManager gameManager;
     private NightEnd nightend;
 
-    void Start()
+    public GameObject npcPrefab;
+    public Transform spawnPoint;
+    public float spawnInterval;
+    public int maxCustomers;
+    public int maxNPCsOnMap;
+    public int resumeSpawnThreshold;
+    private int totalSpawned;
+    private List<GameObject> activeNPCs = new List<GameObject>();
+    public static CustomerSpawner Instance;
+
+    void Awake()
     {
-       
+
         Instantiate(ZombiePrefab, zombieSpawn.position, Quaternion.identity);
+
+
+        nightend = GameObject.Find("NightEnd").GetComponent<NightEnd>();
+
+
         nightend.zombieCount += 1;
+        Debug.Log(nightend.zombieCount);
+
+       
 
 
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
-        for (int i = 0; i < gameManager.dayNum; i++)
-        {
+        
 
-            Instantiate(ZombiePrefab, zombieSpawn.position, Quaternion.identity);
-            nightend.zombieCount += 1;
-        }
+        
+      
+    
 
     }
 
     private void Update()
     {
-        
+        StartCoroutine(SpawnCustomerRoutine());
     }
 
-    IEnumerator delay(){
-        yield return new WaitForSeconds(2);
+    IEnumerator SpawnCustomerRoutine()
+    {
+        Debug.Log("wotk");
+        while (totalSpawned < maxCustomers)
+        {
+            
+            // Wait if max NPCs are on the map
+            while (activeNPCs.Count >= maxNPCsOnMap)
+            {
+                yield return new WaitUntil(() => activeNPCs.Count < resumeSpawnThreshold);
+            }
+
+            // Spawn a new NPC
+            SpawnCustomer();
+            yield return new WaitForSeconds(spawnInterval);
+        }
+
     }
 
+    public void RemoveNPCFromList(GameObject npc)
+    {
+        if (activeNPCs.Contains(npc))
+        {
+            activeNPCs.Remove(npc);
+            nightend.zombieCount -= 1;
+        }
+
+       
+    }
+
+    void SpawnCustomer()
+    {
+        if (totalSpawned < maxCustomers)
+        {
+            GameObject newNPC = Instantiate(ZombiePrefab, zombieSpawn.position, Quaternion.identity);
+
+            activeNPCs.Add(newNPC);
+            totalSpawned++;
+            nightend.zombieCount += 1;
+        }
+    }
 }
