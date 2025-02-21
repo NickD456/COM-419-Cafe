@@ -8,27 +8,26 @@ public class ZombieSpawn : MonoBehaviour
     public Transform zombieSpawn;
     private GameManager gameManager;
     private NightEnd nightend;
-    int i = 0;
+
     void Start()
     {
+       
         Instantiate(ZombiePrefab, zombieSpawn.position, Quaternion.identity);
         nightend.zombieCount += 1;
+
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-    
-        i= 0;
 
-        while(i < 5)
+        for (int i = 0; i < gameManager.dayNum; i++)
         {
 
-        Instantiate(ZombiePrefab, zombieSpawn.position, Quaternion.identity);
-        nightend.zombieCount += 1;
-        i++;
+            Instantiate(ZombiePrefab, zombieSpawn.position, Quaternion.identity);
+            nightend.zombieCount += 1;
         }
-     
+
     }
 
-    void Update()
+    private void Update()
     {
         
     }
@@ -38,4 +37,3 @@ public class ZombieSpawn : MonoBehaviour
     }
 
 }
-

@@ -125,6 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da0cd6d6e116a242ba2de268d598f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nightend: {fileID: 0}
+  zombieCount: 0
 --- !u!96 &4267105912852832942
 TrailRenderer:
   serializedVersion: 3
@@ -170,7 +172,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 2
+  m_Time: 0.09
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3

@@ -14,6 +14,7 @@ public class Pickup : MonoBehaviour
     private GameObject interactableObject;
     private GameObject customerHands;
     private GameObject customer;
+    private GameObject custItem;
 
     public GameObject hands;
     public GameObject pickUpText;
@@ -82,6 +83,7 @@ public class Pickup : MonoBehaviour
                 if (hasItem)
                 {
                     DropObject();
+                    
                 }
             }
         }
@@ -211,22 +213,16 @@ public class Pickup : MonoBehaviour
 
         pickUpText.SetActive(false);
         interactText.SetActive(false);
-        canInteract = false; 
-     
+        canInteract = false;
+        GiveText.SetActive(false);
+
     }
 
     private void DropObject()
     {
         Destroy(heldItem);
         hasItem = false;
-        if (drinkManager.hasLid && drinkManager.hasMilk && drinkManager.hasBrownSugar && drinkManager.hasTea)
-        {
-            Debug.Log("Order right");
-        }
-        else
-        {
-            Debug.Log("order wtromg");
-        }
+        drinkManager.Reset();
     }
 
     private void GetTea()
@@ -299,5 +295,10 @@ public class Pickup : MonoBehaviour
     {
         heldItem.transform.SetParent(customer.transform);
         heldItem.transform.position = customerHands.transform.position;
+        GiveText.SetActive(false);
+        hasItem = false;
+        heldItem = custItem;
+        Destroy(heldItem);
+        heldItem = null;
     }
 }
