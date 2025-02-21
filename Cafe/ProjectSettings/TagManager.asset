@@ -11,6 +11,8 @@ TagManager:
   - machine
   - interactable
   - bullet'
+  - Line Spot
+  - CustomerHands
   - play
   layers:
   - Default
