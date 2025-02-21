@@ -119,11 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &60015836 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6724323036911169159, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
-  m_PrefabInstance: {fileID: 4427888929534666456}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &173791701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,11 +1152,11 @@ PrefabInstance:
     - target: {fileID: 964545597419048767, guid: d22885b46734f2c45b0800895810d373, type: 3}
       propertyPath: Target
       value: 
-      objectReference: {fileID: 1974536886}
+      objectReference: {fileID: 0}
     - target: {fileID: 964545597419048767, guid: d22885b46734f2c45b0800895810d373, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 60015836}
+      objectReference: {fileID: 0}
     - target: {fileID: 7686161970071161140, guid: d22885b46734f2c45b0800895810d373, type: 3}
       propertyPath: m_Name
       value: Zombie 1
@@ -1773,11 +1768,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ZombiePrefab: {fileID: 7686161970071161140, guid: d22885b46734f2c45b0800895810d373, type: 3}
   zombieSpawn: {fileID: 1943865021}
---- !u!1 &1974536886 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6724323036911169154, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
-  m_PrefabInstance: {fileID: 4427888929534666456}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2004737389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,8 +1856,20 @@ PrefabInstance:
       value: player
       objectReference: {fileID: 0}
     - target: {fileID: 5618168472156066600, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5618168472156066600, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6724323035553317914, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6724323035553317919, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6724323035553317919, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
       propertyPath: m_IsKinematic
