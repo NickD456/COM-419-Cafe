@@ -7,7 +7,10 @@ public class bullet : MonoBehaviour
 public NightEnd nightend;
 public int zombieCount;
 
-
+    private void Start()
+    {
+        nightend = GameObject.Find("NightEnd").GetComponent<NightEnd>();
+    }
     void OnCollisionEnter(Collision collision)
     {
         // Check if the bullet collided with an object tagged "Zombie"

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class CustomerSpawner : MonoBehaviour
@@ -14,8 +16,13 @@ public class CustomerSpawner : MonoBehaviour
     public int resumeSpawnThreshold = 2;
     private int totalSpawned = 0; 
     private List<GameObject> activeNPCs = new List<GameObject>();
+    public static CustomerSpawner Instance;
 
-    
+    public Image fadeImage; // Assign this in the Unity Inspector
+    public float fadeDuration = 4f; // Duration of the fade effect
+    public string nextSceneName = "FPS";
+
+
 
 
     void Start()
@@ -43,6 +50,7 @@ public class CustomerSpawner : MonoBehaviour
             SpawnCustomer();
             yield return new WaitForSeconds(spawnInterval);
         }
+   
     }
 
     void SpawnCustomer()
@@ -70,11 +78,36 @@ public class CustomerSpawner : MonoBehaviour
         }
     }
 
-    void RemoveNPCFromList(GameObject npc)
+    public void RemoveNPCFromList(GameObject npc)
     {
         if (activeNPCs.Contains(npc))
         {
             activeNPCs.Remove(npc);
         }
+
+        if (totalSpawned >= maxCustomers && activeNPCs.Count == 0)
+        {
+            StartCoroutine(FadeToBlackAndLoadScene());
+        }
     }
+
+    IEnumerator FadeToBlackAndLoadScene()
+    {
+        float elapsedTime = 0f;
+        Color startColor = fadeImage.color;
+        Color endColor = new Color(0, 0, 0, 1); // Fully black
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            fadeImage.color = Color.Lerp(startColor, endColor, elapsedTime / fadeDuration);
+            yield return null;
+        }
+
+        fadeImage.color = endColor;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
 }
+
+

@@ -11,16 +11,25 @@ public class ZombieSpawn : MonoBehaviour
 
     void Start()
     {
+       
         Instantiate(ZombiePrefab, zombieSpawn.position, Quaternion.identity);
         nightend.zombieCount += 1;
 
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-    
-        for(int i = 0; i< gameManager.dayNum; i++){
 
-        Instantiate(ZombiePrefab, zombieSpawn.position, Quaternion.identity);
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        for (int i = 0; i < gameManager.dayNum; i++)
+        {
+
+            Instantiate(ZombiePrefab, zombieSpawn.position, Quaternion.identity);
+            nightend.zombieCount += 1;
         }
-     
+
+    }
+
+    private void Update()
+    {
+        
     }
 
     IEnumerator delay(){

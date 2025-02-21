@@ -10,6 +10,7 @@ public class DrinkManager : MonoBehaviour
     public bool hasMatcha;
     public bool hasMilk;
     public bool hasLid;
+    public bool orderComp;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,6 +19,7 @@ public class DrinkManager : MonoBehaviour
         hasBrownSugar = false;
         hasMilk = false;
         hasTea = false;
+        orderComp = false;
     }
 
     // Update is called once per frame
@@ -58,5 +60,11 @@ public class DrinkManager : MonoBehaviour
         hasBrownSugar= false;
         hasMilk= false;
         hasTea= false;
+        orderComp = false;
+    }
+
+    public void setOrder()
+    {
+        orderComp = true;
     }
 }

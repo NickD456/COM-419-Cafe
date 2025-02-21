@@ -4,17 +4,25 @@ public class BrownSugarOrder : MonoBehaviour
 {
     private bool correctOrder;
     private DrinkManager drinkManager;
+    private CustomerSpawner customerSpawner;
+    private Transform child;
+    private bool orderTaken;
+   private Transform brownSugarChild;
+    private bool ordered;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         drinkManager = GameObject.Find("DrinkManager").GetComponent<DrinkManager>();
+        orderTaken = false;
+        ordered = false;
+        customerSpawner = GameObject.Find("Customer Spawner").GetComponent<CustomerSpawner>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Transform child = transform.Find("Cup(Clone)");
-        if (child != null)
+        child = transform.Find("Cup(Clone)");
+        if (child != null && !orderTaken)
         {
             CheckOrder();
         }
@@ -24,12 +32,21 @@ public class BrownSugarOrder : MonoBehaviour
     {
         if (other.gameObject.tag == "Line Spot")
         {
-            Transform brownSugarChild = transform.Find("Brown Sugar Order Text");
-            if (brownSugarChild != null)
+            brownSugarChild = transform.Find("Brown Sugar Order Text");
+            if (brownSugarChild != null && !ordered)
             {
                 brownSugarChild.gameObject.SetActive(true);
+                ordered = true;
             }
         }
+
+        if (other.gameObject.tag == "End Spot")
+        {
+            Destroy(this.gameObject);
+            customerSpawner.RemoveNPCFromList(this.gameObject);
+            drinkManager.Reset();
+        }
+
     }
 
     void CheckOrder()
@@ -39,12 +56,33 @@ public class BrownSugarOrder : MonoBehaviour
             correctOrder = true;
             drinkManager.Reset();
             Debug.Log("order right");
+            child = null;
+            GetComponent<Renderer>().material.color = Color.green;
+            orderTaken = true;
+            Transform orderRight = transform.Find("Order Right ");
+            if (orderRight != null)
+            {
+                orderRight.gameObject.SetActive(true);
+                brownSugarChild.gameObject.SetActive(false);
+            }
+            drinkManager.setOrder();
         }
+    
         else
         {
             Debug.Log("order wrong");
             correctOrder = false;
             drinkManager.Reset();
+            child = null;
+            GetComponent<Renderer>().material.color = Color.red;
+            orderTaken = true;
+            Transform orderWrong = transform.Find("Order Wrong Text");
+            if (orderWrong != null)
+            {
+                orderWrong.gameObject.SetActive(true);
+                brownSugarChild.gameObject.SetActive(false);
+            }
+            drinkManager.setOrder();
         }
     }
 }

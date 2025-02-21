@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8278084432147624902}
   - component: {fileID: 8990862974338355094}
   - component: {fileID: 3384229264515916558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 3952190317776769562}
   - component: {fileID: 4684576955613572499}
   - component: {fileID: 964545597419048767}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zombie 1
   m_TagString: Zombie
   m_Icon: {fileID: 0}
@@ -260,5 +260,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8936e4c82a77ae14db8e25ccd76c2a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
   speed: 1.5
