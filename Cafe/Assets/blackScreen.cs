@@ -14,30 +14,16 @@ public class BlackoutScreen : MonoBehaviour
 
     void Update()
     {
-        if(nightend.zombieCount == 0)
+        if(nightend.zombieCount == 1)
         {
-            FadeToBlack();
+            blackScreen.color = new Color(0, 0, 0, 1);       
         }
     }
 
-    public void FadeToBlack()
+    // Method to immediately make the black screen visible
+    void MakeBlackScreenVisible()
     {
-        StartCoroutine(FadeBlack());
-    }
-
-    private IEnumerator FadeBlack()
-    {
-        float elapsedTime = 0f;
-        Color startColor = blackScreen.color;
-        Color endColor = new Color(0, 0, 0, 1); // Fully black
-
-        while (elapsedTime < fadeDuration)
-        {
-            blackScreen.color = Color.Lerp(startColor, endColor, elapsedTime / fadeDuration);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        blackScreen.color = endColor; // Ensure it ends fully black
+        // Set the black screen image's alpha to 1 to make it fully visible
+        blackScreen.color = new Color(0, 0, 0, 1); // Fully opaque (black)
     }
 }
