@@ -14,9 +14,10 @@ public class BlackoutScreen : MonoBehaviour
 
     void Update()
     {
-        if(nightend.zombieCount == 1)
+        if(nightend.zombieCount <= 0)
         {
-            blackScreen.color = new Color(0, 0, 0, 1);       
+            blackScreen.color = new Color(0, 0, 0, 1);
+            MakeBlackScreenVisible();       
         }
     }
 

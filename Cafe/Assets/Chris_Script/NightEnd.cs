@@ -7,7 +7,7 @@ public class NightEnd : MonoBehaviour
 
 public string nextSceneName;
 private NightEnd nightend;
-public int zombieCount =1;
+public int zombieCount = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,7 +19,7 @@ public int zombieCount =1;
     {
 
         if(zombieCount == 0){
-           // SceneManager.LoadScene(SampleScene.unity);
+           //SceneManager.LoadScene(SampleScene);
         }
     }
 
