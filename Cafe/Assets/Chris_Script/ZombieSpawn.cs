@@ -31,6 +31,7 @@ public class ZombieSpawn : MonoBehaviour
 
         nightend.zombieCount += 1;
         Debug.Log(nightend.zombieCount);
+        StartCoroutine(SpawnCustomerRoutine());
 
        
 
@@ -46,12 +47,10 @@ public class ZombieSpawn : MonoBehaviour
 
     private void Update()
     {
-        StartCoroutine(SpawnCustomerRoutine());
     }
 
     IEnumerator SpawnCustomerRoutine()
     {
-        Debug.Log("wotk");
         while (totalSpawned < maxCustomers)
         {
             
