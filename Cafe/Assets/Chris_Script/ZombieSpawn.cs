@@ -53,6 +53,7 @@ public class ZombieSpawn : MonoBehaviour
     {
         while (totalSpawned < maxCustomers)
         {
+       //for (int i =0; i < (2* (gameManager.dayNum)+ 1);i++){
             
             // Wait if max NPCs are on the map
             while (activeNPCs.Count >= maxNPCsOnMap)
@@ -63,7 +64,7 @@ public class ZombieSpawn : MonoBehaviour
             // Spawn a new NPC
             SpawnCustomer();
             yield return new WaitForSeconds(spawnInterval);
-        }
+         }
 
     }
 

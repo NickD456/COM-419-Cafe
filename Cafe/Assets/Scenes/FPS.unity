@@ -1770,7 +1770,7 @@ MonoBehaviour:
   zombieSpawn: {fileID: 1943865021}
   npcPrefab: {fileID: 0}
   spawnPoint: {fileID: 0}
-  spawnInterval: 3
+  spawnInterval: 0.5
   maxCustomers: 9
   maxNPCsOnMap: 9
   resumeSpawnThreshold: 3
