@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 
 public class ZombieSpawn : MonoBehaviour
@@ -19,6 +20,8 @@ public class ZombieSpawn : MonoBehaviour
     private int totalSpawned;
     private List<GameObject> activeNPCs = new List<GameObject>();
     public static CustomerSpawner Instance;
+    public TMP_Text ZombCount;
+
 
     void Awake()
     {
@@ -30,30 +33,24 @@ public class ZombieSpawn : MonoBehaviour
 
 
         nightend.zombieCount += 1;
-        Debug.Log(nightend.zombieCount);
         StartCoroutine(SpawnCustomerRoutine());
-
-       
-
-
-
-        
-
-        
-      
-    
 
     }
 
     private void Update()
     {
+        ZombCount.text = "Zomb: " + nightend.zombieCount;
+        Debug.Log(nightend.zombieCount);
+
+
     }
 
     IEnumerator SpawnCustomerRoutine()
     {
         while (totalSpawned < maxCustomers)
         {
-       //for (int i =0; i < (2* (gameManager.dayNum)+ 1);i++){
+       //for (int i =0; i < (2* (gameManager.dayNum)+ 1);i++)
+       ///{
             
             // Wait if max NPCs are on the map
             while (activeNPCs.Count >= maxNPCsOnMap)
@@ -61,9 +58,10 @@ public class ZombieSpawn : MonoBehaviour
                 yield return new WaitUntil(() => activeNPCs.Count < resumeSpawnThreshold);
             }
 
-            // Spawn a new NPC
-            SpawnCustomer();
+            // Spawn a new NPC   
             yield return new WaitForSeconds(spawnInterval);
+            SpawnCustomer();
+         
          }
 
     }
