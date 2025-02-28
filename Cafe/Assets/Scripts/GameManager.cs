@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,8 +8,13 @@ public class GameManager : MonoBehaviour
     private int money = 0;
     public GameObject[] npcArray;
     private GameObject[] recruitedNPC;    
-    public int dayNum = 1;
+    public int dayNum = 4;
     private GameManager gameManager;
+    public TMP_Text DayNum;
+    private NightEnd nightend;
+    private ZombieSpawn zombieSpawn;
+
+
 
 
 
@@ -16,6 +22,9 @@ public class GameManager : MonoBehaviour
     //Tells unity to not destroy the game manager object
     private void Awake()
     {
+                nightend = GameObject.Find("NightEnd").GetComponent<NightEnd>();
+
+
         if (Instance != null)
         {
             Destroy(gameObject);
@@ -23,6 +32,8 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        DayNum.text = "Day Num: " + dayNum;
+        DayNum.enabled = true;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,6 +44,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(nightend.zombieCount == 0)
+        {
+            DayNum.enabled = false;
+        }
         
     }
 

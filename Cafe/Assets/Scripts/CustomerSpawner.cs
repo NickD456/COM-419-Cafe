@@ -25,6 +25,7 @@ public class CustomerSpawner : MonoBehaviour
 
 
 
+
     void Start()
     {
         StartCoroutine(SpawnCustomerRoutine());
