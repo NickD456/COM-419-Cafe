@@ -15,6 +15,7 @@ TagManager:
   - CustomerHands
   - play
   - End Spot
+  - Book
   layers:
   - Default
   - TransparentFX

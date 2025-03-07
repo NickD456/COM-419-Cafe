@@ -8,6 +8,7 @@ public class Pickup : MonoBehaviour
     private bool interact;
     private bool canInteract;
     private bool canGive;
+    private bool isBook;
 
     private GameObject item;
     private GameObject heldItem;
@@ -26,6 +27,9 @@ public class Pickup : MonoBehaviour
     public GameObject lidText;
     public GameObject teaText;
     public GameObject GiveText;
+    public GameObject bookText;
+    public GameObject bookBrownSugar;
+    public GameObject bookMatcha;
 
 
     private Vector3 originalItem;
@@ -38,6 +42,7 @@ public class Pickup : MonoBehaviour
         canpickup = false;    //setting both to false
         hasItem = false;
         interact = false;
+        isBook = false;
         drinkManager = GameObject.Find("DrinkManager").GetComponent<DrinkManager>();
     }
 
@@ -74,6 +79,14 @@ public class Pickup : MonoBehaviour
             if(Input.GetKeyDown("f"))
             {
                 StartInteract();
+            }
+        }
+
+        else if (isBook == true)
+        {
+            if(Input.GetKeyDown("f"))
+            {
+                FlipPage();
             }
         }
         else
@@ -205,6 +218,12 @@ public class Pickup : MonoBehaviour
             GiveText.SetActive(true);
             canGive = true;
         }
+
+        if((other.gameObject.tag == "Book"))
+        {
+            isBook = true;
+            bookText.SetActive(true);
+        }
         
     }
     private void OnTriggerExit(Collider other)
@@ -215,6 +234,8 @@ public class Pickup : MonoBehaviour
         interactText.SetActive(false);
         canInteract = false;
         GiveText.SetActive(false);
+        isBook = false;
+        bookText.SetActive(false);
 
     }
 
@@ -300,5 +321,20 @@ public class Pickup : MonoBehaviour
         heldItem = custItem;
         Destroy(heldItem);
         heldItem = null;
+    }
+
+    void FlipPage()
+    {
+        if(bookBrownSugar.activeSelf)
+        {
+            bookBrownSugar.SetActive(false);
+            bookMatcha.SetActive(true);
+        }
+
+        if (bookMatcha.activeSelf)
+        {
+            bookMatcha.SetActive(false);
+            bookBrownSugar.SetActive(true);
+        }
     }
 }
