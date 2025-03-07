@@ -7,12 +7,15 @@ using TMPro;
 public class ZombieSpawn : MonoBehaviour
 {
     public GameObject ZombiePrefab;
-    public Transform zombieSpawn;
+    //public Transform zombieSpawn;
     private GameManager gameManager;
     private NightEnd nightend;
 
     public GameObject npcPrefab;
-    public Transform spawnPoint;
+    public Transform spawnPoint1;
+    public Transform spawnPoint2;
+    public Transform spawnPoint3;
+
     public float spawnInterval;
     public int maxCustomers;
     public int maxNPCsOnMap;
@@ -22,6 +25,8 @@ public class ZombieSpawn : MonoBehaviour
     public static CustomerSpawner Instance;
     public TMP_Text ZombCount;
     public bool hasRun = false;
+    //Random rdm = new Random();
+    public int rand1;
 
 
     void Awake()
@@ -49,7 +54,7 @@ public class ZombieSpawn : MonoBehaviour
         {
             ZombCount.enabled = false;
         }
-
+        rand1 = Random.Range(1,4);
 
     }
 
@@ -58,8 +63,8 @@ public class ZombieSpawn : MonoBehaviour
         //while (totalSpawned < maxCustomers)
         for(int i=0; i < (2*(gameManager.dayNum)); i++)
         {
-            Debug.Log(gameManager.dayNum + "Day");
-            Debug.Log(nightend.zombieCount + "Zomb");
+          //  Debug.Log(gameManager.dayNum + "Day");
+           // Debug.Log(nightend.zombieCount + "Zomb");
     
             
             // Wait if max NPCs are on the map
@@ -93,9 +98,28 @@ public class ZombieSpawn : MonoBehaviour
         //{
         hasRun = true;
 
-            GameObject newNPC = Instantiate(ZombiePrefab, zombieSpawn.position, Quaternion.identity);
+        if(rand1 == 1){
+            GameObject newNPC = Instantiate(ZombiePrefab, spawnPoint1.position, Quaternion.identity);
+                        activeNPCs.Add(newNPC);
+                        Debug.Log("Spawn1");
 
-            activeNPCs.Add(newNPC);
+        }
+        if(rand1 == 2){
+            GameObject newNPC = Instantiate(ZombiePrefab, spawnPoint2.position, Quaternion.identity);
+                        activeNPCs.Add(newNPC);
+                        Debug.Log("Spawn2");
+
+
+        }
+        if(rand1 == 3){
+            GameObject newNPC = Instantiate(ZombiePrefab, spawnPoint3.position, Quaternion.identity);
+                        activeNPCs.Add(newNPC);
+                        Debug.Log("Spawn3");    
+
+        }
+    
+
+            //activeNPCs.Add(newNPC);
             //totalSpawned++;
             nightend.zombieCount += 1;
         //}
