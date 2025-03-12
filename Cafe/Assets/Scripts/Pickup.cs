@@ -325,16 +325,19 @@ public class Pickup : MonoBehaviour
 
     void FlipPage()
     {
+        Debug.Log("work");
         if(bookBrownSugar.activeSelf)
         {
             bookBrownSugar.SetActive(false);
             bookMatcha.SetActive(true);
+            Debug.Log("matcah");
         }
 
-        if (bookMatcha.activeSelf)
+        else if (bookMatcha.activeSelf)
         {
             bookMatcha.SetActive(false);
             bookBrownSugar.SetActive(true);
+            Debug.Log("sugar");
         }
     }
 }
