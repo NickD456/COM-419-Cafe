@@ -2909,6 +2909,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1124491229}
   - component: {fileID: 1124491228}
+  - component: {fileID: 1124491230}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2956,6 +2957,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1124491230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124491227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e4082cd59166b046ba83ead11f3f188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1130161165
 GameObject:
   m_ObjectHideFlags: 0
@@ -3579,12 +3592,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5060605270932848152, guid: c1efa0d3f406dca408ae38cb8a1dc12c, type: 3}
+      propertyPath: dialogueEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5060605270932848152, guid: c1efa0d3f406dca408ae38cb8a1dc12c, type: 3}
       propertyPath: dialogueEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1124491230}
     - target: {fileID: 5060605270932848152, guid: c1efa0d3f406dca408ae38cb8a1dc12c, type: 3}
       propertyPath: dialogueEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5060605270932848152, guid: c1efa0d3f406dca408ae38cb8a1dc12c, type: 3}
+      propertyPath: dialogueEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 5060605270932848152, guid: c1efa0d3f406dca408ae38cb8a1dc12c, type: 3}
+      propertyPath: dialogueEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: curserLock, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5060605270932848152, guid: c1efa0d3f406dca408ae38cb8a1dc12c, type: 3}
+      propertyPath: dialogueEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8737253841939166918, guid: c1efa0d3f406dca408ae38cb8a1dc12c, type: 3}
       propertyPath: m_Name
@@ -3595,6 +3624,108 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1efa0d3f406dca408ae38cb8a1dc12c, type: 3}
+--- !u!1 &1429090684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1429090687}
+  - component: {fileID: 1429090686}
+  - component: {fileID: 1429090685}
+  m_Layer: 0
+  m_Name: DialogueTrigger3D (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1429090685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429090684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d76f14b485037e4a8a0a47309406b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingsType: 0
+  dialogueTriggerSettings: {fileID: 0}
+  dialogueEnterEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ExampleGameManager, Assembly-CSharp
+        m_MethodName: ShowInteraction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  dialogueExitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ExampleGameManager, Assembly-CSharp
+        m_MethodName: HideInteraction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  playerTag: Player
+  fileTypeUsed: 0
+  inkJSON: {fileID: 4900000, guid: f397224930d00354c8cf50843caad689, type: 3}
+  TXTFile: {fileID: 4900000, guid: 2bc3fa58463725d4596b69a72efba11c, type: 3}
+--- !u!65 &1429090686
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429090684}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.1701384, y: 1, z: 4.188567}
+  m_Center: {x: 0.47506952, y: 0, z: -0.72350264}
+--- !u!4 &1429090687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429090684}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.717, y: -0.85, z: 15.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1444988710
 GameObject:
   m_ObjectHideFlags: 0
@@ -5607,6 +5738,7 @@ SceneRoots:
   - {fileID: 1918473495}
   - {fileID: 1106959342}
   - {fileID: 350909777}
+  - {fileID: 1429090687}
   - {fileID: 1417391505}
   - {fileID: 664645192}
   - {fileID: 1720088026}
