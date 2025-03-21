@@ -61,12 +61,12 @@ public class ZombieSpawn : MonoBehaviour
     IEnumerator SpawnCustomerRoutine()
     {
         //while (totalSpawned < maxCustomers)
-        for(int i=0; i < (2*(gameManager.dayNum)); i++)
+        for(int i=0; i < (2*(gameManager.dayNum) +2); i++)
         {
           //  Debug.Log(gameManager.dayNum + "Day");
            // Debug.Log(nightend.zombieCount + "Zomb");
     
-            
+            yield return new WaitForSeconds(.5f);
             // Wait if max NPCs are on the map
             while (activeNPCs.Count >= maxNPCsOnMap)
             {
@@ -105,14 +105,14 @@ public class ZombieSpawn : MonoBehaviour
 
         }
         if(rand1 == 2){
-            GameObject newNPC = Instantiate(ZombiePrefab, spawnPoint2.position, Quaternion.identity);
+            GameObject newNPC = Instantiate(ZombiePrefab, spawnPoint1.position, Quaternion.identity);
                         activeNPCs.Add(newNPC);
                         Debug.Log("Spawn2");
 
 
         }
         if(rand1 == 3){
-            GameObject newNPC = Instantiate(ZombiePrefab, spawnPoint3.position, Quaternion.identity);
+            GameObject newNPC = Instantiate(ZombiePrefab, spawnPoint1.position, Quaternion.identity);
                         activeNPCs.Add(newNPC);
                         Debug.Log("Spawn3");    
 

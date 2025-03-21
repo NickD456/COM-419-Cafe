@@ -13,6 +13,7 @@ public string nextSceneName;
 private NightEnd nightend;
 public int zombieCount =0;
 private GameManager gameManager;
+private Weppon weppon;
 
     public Image fadeImage; // Assign this in the Unity Inspector
  public float fadeDuration = 4f; // Duration of the fade effect
@@ -20,6 +21,8 @@ private GameManager gameManager;
     void Start()
     {
         zombieSpawn = GameObject.Find("Zombie Spawn").GetComponent<ZombieSpawn>();
+        
+       // weppon.audioSource = GetComponent<AudioSource>();
 
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         

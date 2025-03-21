@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     private int money = 0;
     public GameObject[] npcArray;
     private GameObject[] recruitedNPC;    
-    public int dayNum = 4;
+    public int dayNum = 1;
     private GameManager gameManager;
     public TMP_Text DayNum;
     private NightEnd nightend;
