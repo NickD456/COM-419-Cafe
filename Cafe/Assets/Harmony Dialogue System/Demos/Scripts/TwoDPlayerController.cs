@@ -29,11 +29,7 @@ namespace HarmonyDialogueSystem.Demo
 
         private void FixedUpdate()
         {
-            if (DialogueManager.instance.dialogueIsPlaying)
-            {
-                return;
-            }
-
+            
             UpdateIsGrounded();
 
             HandleHorizontalMovement();

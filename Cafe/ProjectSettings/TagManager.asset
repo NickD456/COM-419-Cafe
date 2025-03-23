@@ -16,6 +16,7 @@ TagManager:
   - play
   - End Spot
   - Book
+  - Door Spot
   layers:
   - Default
   - TransparentFX

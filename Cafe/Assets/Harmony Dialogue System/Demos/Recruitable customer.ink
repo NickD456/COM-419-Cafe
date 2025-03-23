@@ -3,7 +3,7 @@
 Hello! I'd like to order. May I come in?#speaker:Customer
 please? #speaker:Customer
 + [Yes! Welcome to the Cafe.]
-    Thank you!#speaker:Customer
+    -> LetIn
 + [No, you look infected.] 
     What!! I'm not infected.#speaker:Customer
     -> MaybeInfected
@@ -12,7 +12,7 @@ please? #speaker:Customer
 === MaybeInfected ===
 Let me make sure.#speaker:Player
 Where do you want to examine?#speaker:Player
-+ [Arms] #speaker:Player
++ [Arms]#speaker:Player
     You look at their arms and find nothing#speaker:Player
     -> NotInfected
 + [Legs] #speaker:Player
@@ -27,11 +27,14 @@ Where do you want to examine?#speaker:Player
 I did not find anything. Should we let them in?#speaker:Player
 They could be hiding it.#speaker:Player
 + [I'll let them in ] #speaker:Player
-    You may come in#speaker:Player
-    -> END
+    -> LetIn
 + [Let's play it safe ] #speaker:Player
     I dont trust you. Leave#speaker:Player
     -> END
-
+    
+=== LetIn ===
+You may come in#speaker:Player #enter:Yes
+Thank You!#speaker:Customer
+-> END
 
 
