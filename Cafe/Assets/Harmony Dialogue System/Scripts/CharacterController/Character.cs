@@ -61,9 +61,9 @@ namespace HarmonyDialogueSystem
             {
                 outValue = CharacterTags[key];
                 return true;
-                Debug.Log("yes");
+                
             }
-            Debug.Log("no");
+            
 
             return false;
         }

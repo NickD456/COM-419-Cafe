@@ -8,20 +8,36 @@ public class KeyCheck : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        AddSubscriber();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void AddSubscriber()
     {
-        if (other.gameObject.tag == "Object")
+        CharacterManager.instance.characterChanged.AddListener(GetCharacterTag);
+    }
+
+    public void GetCharacterTag(Character character)
+    {
+        string tag = "enter";
+
+    if (character.LookForCharacterTag(tag, out string value))
         {
-            character.LookForCharacterTag("enter" out "Yes");
+            Debug.Log(value);
+            if(value == "yes")
+            {
+                Debug.Log("Now here");
+            }
+            else if (value == "no")
+            {
+                Debug.Log("Not here");
+            }
+
         }
     }
 }
