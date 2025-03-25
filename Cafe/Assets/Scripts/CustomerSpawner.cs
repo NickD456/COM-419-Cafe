@@ -22,6 +22,7 @@ public class CustomerSpawner : MonoBehaviour
     public float fadeDuration = 4f; // Duration of the fade effect
     public string nextSceneName = "FPS";
 
+    public List<GameObject> customerTextPrefabs;
 
 
 
@@ -60,6 +61,7 @@ public class CustomerSpawner : MonoBehaviour
         {
             GameObject newNPC = Instantiate(npcPrefab, spawnPoint.position, Quaternion.identity);
             int randomOrder = Random.Range(0, 2);
+            int randomCustomerText = 0;
 
             switch (randomOrder)
             {
@@ -71,6 +73,18 @@ public class CustomerSpawner : MonoBehaviour
                     newNPC.AddComponent<BrownSugarOrder>();
                     break;
             }
+
+            switch(randomCustomerText)
+            {
+                case 0:
+                    GameObject newChild = Instantiate(customerTextPrefabs[0], newNPC.transform);
+                    newChild.transform.localPosition = Vector3.zero;
+                    newChild.transform.localRotation = Quaternion.identity;
+                    newChild.transform.localScale = Vector3.one;
+                    break;
+            }
+
+            
             activeNPCs.Add(newNPC);
             totalSpawned++;
 

@@ -5,10 +5,12 @@ using static UnityEditor.Progress;
 public class KeyCheck : MonoBehaviour
 {
     private Character character;
+    private GameManager gameManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         AddSubscriber();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -31,10 +33,12 @@ public class KeyCheck : MonoBehaviour
             Debug.Log(value);
             if(value == "yes")
             {
+                gameManager.canEnter = true;
                 Debug.Log("Now here");
             }
             else if (value == "no")
             {
+                gameManager.canEnter = false;
                 Debug.Log("Not here");
             }
 

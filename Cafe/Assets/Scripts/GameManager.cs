@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public TMP_Text DayNum;
     private NightEnd nightend;
     private ZombieSpawn zombieSpawn;
+    public bool isTalking = false;
+    public bool canEnter = false;
 
 
 

@@ -9,7 +9,8 @@ public class NavScript : MonoBehaviour
     private GameObject end;
     private GameObject doorSpot;
     private static DrinkManager drinkManager;
-    
+    private GameManager gameManager;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +20,7 @@ public class NavScript : MonoBehaviour
         end = GameObject.FindWithTag("End Spot");
         doorSpot = GameObject.FindWithTag("Door Spot");
         drinkManager = GameObject.Find("DrinkManager").GetComponent<DrinkManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -29,7 +31,11 @@ public class NavScript : MonoBehaviour
         {
             agent.destination = end.transform.position;
         }
-        else if(drinkManager.orderComp == false)
+        if (gameManager.canEnter == false)
+        {
+            agent.destination = doorSpot.transform.position;
+        }
+        else
         {
             agent.destination = orderSpot.transform.position;
         }

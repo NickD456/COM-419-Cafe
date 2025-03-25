@@ -39,6 +39,8 @@ public class FirstPersonController : MonoBehaviour
     private float pitch = 0.0f;
     private Image crosshairObject;
 
+    private GameManager gameManager;
+
     #region Camera Zoom Variables
 
     public bool enableZoom = true;
@@ -151,12 +153,11 @@ public class FirstPersonController : MonoBehaviour
 
     void Start()
     {
-        if(lockCursor)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
 
-        if(crosshair)
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+
+        if (crosshair)
         {
             crosshairObject.sprite = crosshairImage;
             crosshairObject.color = crosshairColor;
@@ -202,10 +203,21 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
+
+        if(gameManager.isTalking)
+        {
+            
+            UnlockMouse();
+        }
+        else
+        {
+            
+            LockMouse();
+        }
         #region Camera
 
         // Control camera movement
-        if(cameraCanMove)
+        if (cameraCanMove)
         {
             yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
 
@@ -226,13 +238,23 @@ public class FirstPersonController : MonoBehaviour
             playerCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
         }
 
+        if (lockCursor)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            
+        }
+        else if (!lockCursor)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+
         #region Camera Zoom
 
         if (enableZoom)
         {
             // Changes isZoomed when key is pressed
             // Behavior for toogle zoom
-            if(Input.GetKeyDown(zoomKey) && !holdToZoom && !isSprinting)
+            if (Input.GetKeyDown(zoomKey) && !holdToZoom && !isSprinting)
             {
                 if (!isZoomed)
                 {
@@ -246,24 +268,24 @@ public class FirstPersonController : MonoBehaviour
 
             // Changes isZoomed when key is pressed
             // Behavior for hold to zoom
-            if(holdToZoom && !isSprinting)
+            if (holdToZoom && !isSprinting)
             {
-                if(Input.GetKeyDown(zoomKey))
+                if (Input.GetKeyDown(zoomKey))
                 {
                     isZoomed = true;
                 }
-                else if(Input.GetKeyUp(zoomKey))
+                else if (Input.GetKeyUp(zoomKey))
                 {
                     isZoomed = false;
                 }
             }
 
             // Lerps camera.fieldOfView to allow for a smooth transistion
-            if(isZoomed)
+            if (isZoomed)
             {
                 playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, zoomFOV, zoomStepTime * Time.deltaTime);
             }
-            else if(!isZoomed && !isSprinting)
+            else if (!isZoomed && !isSprinting)
             {
                 playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, fov, zoomStepTime * Time.deltaTime);
             }
@@ -530,6 +552,11 @@ public class FirstPersonController : MonoBehaviour
     public void UnlockMouse()
     {
         lockCursor = false;
+        
+    }
+    public void LockMouse()
+    {
+        lockCursor = true;
     }
 }
 

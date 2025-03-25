@@ -33,6 +33,8 @@ namespace HarmonyDialogueSystem
 
         [SerializeField] private TextAsset TXTFile;
 
+        private GameManager gameManager;
+
         private void Awake()
         {
             playerInRange = false;
@@ -57,6 +59,11 @@ namespace HarmonyDialogueSystem
             }
         }
 
+        public void Start()
+        {
+            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        }
+
         private void Update()
         {
             if (playerInRange && InputManagerDialogue.isInteracting())
@@ -69,6 +76,7 @@ namespace HarmonyDialogueSystem
         {
             if (other.CompareTag(playerTag))
             {
+                
                 playerInRange = true;
                 TurnOnEnterEvents();
             }
@@ -78,6 +86,8 @@ namespace HarmonyDialogueSystem
         {
             if (other.CompareTag(playerTag))
             {
+                gameManager.isTalking = false;
+                gameManager.canEnter = false;
                 playerInRange = false;
                 TurnOnExitEvents();
             }
