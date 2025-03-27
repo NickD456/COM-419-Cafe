@@ -87,7 +87,7 @@ namespace HarmonyDialogueSystem
             if (other.CompareTag(playerTag))
             {
                 gameManager.isTalking = false;
-                gameManager.canEnter = false;
+                
                 playerInRange = false;
                 TurnOnExitEvents();
             }

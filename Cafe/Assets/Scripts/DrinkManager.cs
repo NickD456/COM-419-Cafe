@@ -11,6 +11,7 @@ public class DrinkManager : MonoBehaviour
     public bool hasMilk;
     public bool hasLid;
     public bool orderComp;
+    private GameManager gameManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,6 +21,8 @@ public class DrinkManager : MonoBehaviour
         hasMilk = false;
         hasTea = false;
         orderComp = false;
+
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -66,5 +69,6 @@ public class DrinkManager : MonoBehaviour
     public void setOrder()
     {
         orderComp = true;
+        gameManager.canEnter = false;
     }
 }

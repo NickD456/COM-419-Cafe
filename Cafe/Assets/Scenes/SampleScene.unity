@@ -3144,10 +3144,13 @@ MonoBehaviour:
   - {fileID: 5689923310179608570, guid: a469b238edabad149839810b0a73ac68, type: 3}
   - {fileID: 6729020035812187551, guid: e92fe66f9c974694095d1849d1c7a23a, type: 3}
   - {fileID: 8328731280033390428, guid: c38fd6e99906f21478276e0f04ee1c48, type: 3}
+  recruitedNPC: []
   dayNum: 1
   DayNum: {fileID: 0}
   isTalking: 0
   canEnter: 0
+  canTalk: 1
+  turnBack: 0
 --- !u!4 &1124491229
 Transform:
   m_ObjectHideFlags: 0
@@ -3785,6 +3788,10 @@ MonoBehaviour:
   nextSceneName: NextScene
   customerTextPrefabs:
   - {fileID: 8737253841939166918, guid: c1efa0d3f406dca408ae38cb8a1dc12c, type: 3}
+  recruitNPC:
+  - {fileID: 1197673615969690264, guid: c75a07a9e5521ce43a14dfc516059c03, type: 3}
+  - {fileID: 871881344867652251, guid: 9f7f8d980343e284bb917e937ff34874, type: 3}
+  - {fileID: 1342576216873570141, guid: d79aae87b474ae544b1f91def8806c37, type: 3}
 --- !u!4 &1393328883
 Transform:
   m_ObjectHideFlags: 0

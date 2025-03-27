@@ -27,18 +27,19 @@ public class NavScript : MonoBehaviour
     void Update()
     {
 
-        if (drinkManager.orderComp == true)
+        if (drinkManager.orderComp == true || gameManager.turnBack == true)
         {
             agent.destination = end.transform.position;
         }
-        if (gameManager.canEnter == false)
+        else if (gameManager.canEnter == false && drinkManager.orderComp == false)
         {
             agent.destination = doorSpot.transform.position;
         }
-        else
+        else if (gameManager.canEnter == true && drinkManager.orderComp == false)
         {
             agent.destination = orderSpot.transform.position;
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2036878138914651039}
   m_Layer: 0
   m_Name: Recruitable NPC 5
-  m_TagString: Untagged
+  m_TagString: Recruit NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

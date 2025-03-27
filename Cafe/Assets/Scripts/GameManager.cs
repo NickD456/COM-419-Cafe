@@ -1,13 +1,14 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
     //Number of NPCs. Will change when NPC is recruited or dies.
     private int npcCount = 0;
     private int money = 0;
-    public GameObject[] npcArray;
-    private GameObject[] recruitedNPC;    
+    public List<GameObject> npcArray;
+    public List<GameObject> recruitedNPC;    
     public int dayNum = 1;
     private GameManager gameManager;
     public TMP_Text DayNum;
@@ -15,6 +16,9 @@ public class GameManager : MonoBehaviour
     private ZombieSpawn zombieSpawn;
     public bool isTalking = false;
     public bool canEnter = false;
+    public bool canTalk = true;
+    public bool turnBack = false;
+    int maxRecruited = 3;
 
 
 

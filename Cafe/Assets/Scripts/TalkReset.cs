@@ -20,8 +20,11 @@ public class TalkReset : MonoBehaviour
     {
         if (other.gameObject.tag == "Customer")
         {
+            gameManager.isTalking = false;
             gameManager.canEnter = false;
-           Debug.Log("Can Enter: " + gameManager.canEnter);
+            gameManager.canTalk = true;
+            gameManager.turnBack = false;
+            Debug.Log("Can Enter: " + gameManager.canEnter);
         }
     }
 }

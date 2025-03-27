@@ -35,11 +35,14 @@ public class KeyCheck : MonoBehaviour
             {
                 gameManager.canEnter = true;
                 Debug.Log("Now here");
+                gameManager.canTalk = false;
             }
             else if (value == "no")
             {
                 gameManager.canEnter = false;
                 Debug.Log("Not here");
+                gameManager.canTalk = false;
+                gameManager.turnBack = true;
             }
 
         }

@@ -23,6 +23,10 @@ public class CustomerSpawner : MonoBehaviour
     public string nextSceneName = "FPS";
 
     public List<GameObject> customerTextPrefabs;
+    public List<GameObject> recruitNPC;
+    
+
+    private GameManager gameManager;
 
 
 
@@ -30,6 +34,7 @@ public class CustomerSpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnCustomerRoutine());
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -59,6 +64,7 @@ public class CustomerSpawner : MonoBehaviour
     {
         if (totalSpawned < maxCustomers)
         {
+            
             GameObject newNPC = Instantiate(npcPrefab, spawnPoint.position, Quaternion.identity);
             int randomOrder = Random.Range(0, 2);
             int randomCustomerText = 0;
