@@ -18,7 +18,9 @@ public class GameManager : MonoBehaviour
     public bool canEnter = false;
     public bool canTalk = true;
     public bool turnBack = false;
+    public bool isRecruit = false;
     public int maxRecruited = 13;
+    public string KeyName;
 
 
 

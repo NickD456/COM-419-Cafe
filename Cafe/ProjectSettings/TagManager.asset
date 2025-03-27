@@ -18,6 +18,7 @@ TagManager:
   - Book
   - Door Spot
   - Recruit NPC
+  - Recruit Spot
   layers:
   - Default
   - TransparentFX

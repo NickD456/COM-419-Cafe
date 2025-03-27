@@ -8,6 +8,7 @@ public class NavScript : MonoBehaviour
     private GameObject orderSpot;
     private GameObject end;
     private GameObject doorSpot;
+    private GameObject recruitSpot;
     private static DrinkManager drinkManager;
     private GameManager gameManager;
 
@@ -19,8 +20,10 @@ public class NavScript : MonoBehaviour
         orderSpot = GameObject.FindWithTag("Line Spot");
         end = GameObject.FindWithTag("End Spot");
         doorSpot = GameObject.FindWithTag("Door Spot");
+        recruitSpot = GameObject.FindWithTag("Recruit Spot");
         drinkManager = GameObject.Find("DrinkManager").GetComponent<DrinkManager>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
     }
 
     // Update is called once per frame
@@ -38,6 +41,11 @@ public class NavScript : MonoBehaviour
         else if (gameManager.canEnter == true && drinkManager.orderComp == false)
         {
             agent.destination = orderSpot.transform.position;
+        }
+        
+        if (gameManager.isRecruit == true)
+        {
+            agent.destination = recruitSpot.transform.position;
         }
         
     }

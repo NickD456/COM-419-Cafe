@@ -76,5 +76,5 @@ MonoBehaviour:
       m_Calls: []
   playerTag: Player
   fileTypeUsed: 0
-  inkJSON: {fileID: 4900000, guid: c0c1d87cc7c7c934190518b70c939108, type: 3}
+  inkJSON: {fileID: 4900000, guid: 137885242f5563a479523186e2e25eae, type: 3}
   TXTFile: {fileID: 0}

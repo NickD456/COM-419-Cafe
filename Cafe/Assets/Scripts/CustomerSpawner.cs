@@ -23,7 +23,8 @@ public class CustomerSpawner : MonoBehaviour
     public string nextSceneName = "FPS";
 
     public List<GameObject> customerTextPrefabs;
-    public List<GameObject> recruitNPC;
+    public List <GameObject> recruitTextPrefabs;
+    public List<GameObject> recruitNPC = new List<GameObject>();
 
     private int numRecNPCs = 0;
     private int maxRec = 0;
@@ -75,7 +76,7 @@ public class CustomerSpawner : MonoBehaviour
         {
             GameObject newNPC = null;
             int randomCustOrNPC = 2;
-            Debug.Log(randomCustOrNPC);
+            
 
             switch (randomCustOrNPC)
             {
@@ -93,7 +94,16 @@ public class CustomerSpawner : MonoBehaviour
                     Debug.Log(maxRec);
                     if (numRecNPCs <= maxRec)
                     {
-                        newNPC = Instantiate(npcPrefab, spawnPoint.position, Quaternion.identity);
+                        int randomRecNPC = 0;
+                        switch (randomRecNPC)
+                        {
+                            case 0:
+                                newNPC = Instantiate(recruitNPC[0], spawnPoint.position, Quaternion.identity);
+                                Debug.Log("Recruited NPC Spawned");
+                                break;
+                        }
+
+                      
                         Debug.Log("NPC Spawned");
                         break;
                         
@@ -118,30 +128,50 @@ public class CustomerSpawner : MonoBehaviour
             int randomOrder = Random.Range(0, 2);
             int randomCustomerText = 0;
 
-            switch (randomOrder)
+            if (newNPC.tag == "Customer")
             {
-                case 0:
-                    newNPC.AddComponent<MatchaOrder>(); 
-                    break;
+                gameManager.KeyName = "enter";
+                switch (randomOrder)
+                {
+                    case 0:
+                        newNPC.AddComponent<MatchaOrder>();
+                        break;
 
-                case 1:
-                    newNPC.AddComponent<BrownSugarOrder>();
-                    break;
+                    case 1:
+                        newNPC.AddComponent<BrownSugarOrder>();
+                        break;
+                }
+
+
+                switch (randomCustomerText)
+                {
+                    case 0:
+                        GameObject newChild = Instantiate(customerTextPrefabs[0], newNPC.transform);
+                        newChild.transform.localPosition = Vector3.zero;
+                        newChild.transform.localRotation = Quaternion.identity;
+                        newChild.transform.localScale = Vector3.one;
+                        break;
+
+                }
+            }
+            if (newNPC.tag == "Recruit NPC")
+            {
+                gameManager.KeyName = "recruit";
+                switch (randomCustomerText)
+                {
+                    case 0:
+                        GameObject newChild = Instantiate(recruitTextPrefabs[0], newNPC.transform);
+                        newChild.transform.localPosition = Vector3.zero;
+                        newChild.transform.localRotation = Quaternion.identity;
+                        newChild.transform.localScale = Vector3.one;
+                        break;
+                }
             }
 
-            switch(randomCustomerText)
-            {
-                case 0:
-                    GameObject newChild = Instantiate(customerTextPrefabs[0], newNPC.transform);
-                    newChild.transform.localPosition = Vector3.zero;
-                    newChild.transform.localRotation = Quaternion.identity;
-                    newChild.transform.localScale = Vector3.one;
-                    break;
-            }
 
-            
-            activeNPCs.Add(newNPC);
-            totalSpawned++;
+
+                activeNPCs.Add(newNPC);
+                totalSpawned++;
 
             
             

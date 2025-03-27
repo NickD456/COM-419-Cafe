@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class TalkReset : MonoBehaviour
+public class RecruitScript : MonoBehaviour
 {
-
     private GameManager gameManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -13,21 +12,27 @@ public class TalkReset : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Customer" || other.gameObject.tag == "Recruit NPC")
+        if (other.gameObject.tag == "Recruit NPC")
         {
             gameManager.isTalking = false;
             gameManager.canEnter = false;
             gameManager.canTalk = true;
             gameManager.turnBack = false;
-            Debug.Log("Can Enter: " + gameManager.canEnter);
+            gameManager.isRecruit = false;
+
+            gameManager.npcArray[0] = other.gameObject;
+
+            Destroy(other.gameObject);
+
+            
 
 
-           
+
         }
     }
 }

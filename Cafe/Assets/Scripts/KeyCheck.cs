@@ -26,14 +26,21 @@ public class KeyCheck : MonoBehaviour
 
     public void GetCharacterTag(Character character)
     {
-        string tag = "enter";
+        string tag = gameManager.KeyName;
 
-    if (character.LookForCharacterTag(tag, out string value))
+        if (character.LookForCharacterTag(tag, out string value))
         {
             Debug.Log(value);
             if(value == "yes")
             {
-                gameManager.canEnter = true;
+                if (tag == "enter")
+                {
+                    gameManager.canEnter = true;
+                }
+                if(tag == "recruit")
+                {
+                    gameManager.isRecruit = true;
+                }
                 Debug.Log("Now here");
                 gameManager.canTalk = false;
             }
