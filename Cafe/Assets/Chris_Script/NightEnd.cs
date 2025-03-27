@@ -33,7 +33,7 @@ private Weppon weppon;
     {
 
 
-        if(zombieCount == 0 )
+        if(zombieCount <= 0 )
         {
             StartCoroutine(FadeToBlackAndLoadScene());
         }

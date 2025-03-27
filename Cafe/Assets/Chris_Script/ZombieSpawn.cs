@@ -43,6 +43,7 @@ public class ZombieSpawn : MonoBehaviour
         //nightend.zombieCount += 1;
         StartCoroutine(SpawnCustomerRoutine());
         ZombCount.enabled = true;
+        //rand1 = 1;
 
     }
 
@@ -54,8 +55,9 @@ public class ZombieSpawn : MonoBehaviour
         {
             ZombCount.enabled = false;
         }
-        rand1 = Random.Range(1,4);
-
+        rand1 = Random.Range(1,3);
+        
+     
     }
 
     IEnumerator SpawnCustomerRoutine()
@@ -74,7 +76,7 @@ public class ZombieSpawn : MonoBehaviour
             }
 
             // Spawn a new NPC   
-            yield return new WaitForSeconds(spawnInterval);
+            yield return new WaitForSeconds(1f);
             SpawnCustomer();
          
          }
@@ -102,17 +104,19 @@ public class ZombieSpawn : MonoBehaviour
             GameObject newNPC = Instantiate(ZombiePrefab, spawnPoint1.position, Quaternion.identity);
                         activeNPCs.Add(newNPC);
                         Debug.Log("Spawn1");
+            //rand1 = 2;
 
         }
         if(rand1 == 2){
-            GameObject newNPC = Instantiate(ZombiePrefab, spawnPoint1.position, Quaternion.identity);
+            GameObject newNPC = Instantiate(ZombiePrefab, spawnPoint2.position, Quaternion.identity);
                         activeNPCs.Add(newNPC);
                         Debug.Log("Spawn2");
+            //rand1 = 1;
 
 
         }
         if(rand1 == 3){
-            GameObject newNPC = Instantiate(ZombiePrefab, spawnPoint1.position, Quaternion.identity);
+            GameObject newNPC = Instantiate(ZombiePrefab, spawnPoint2.position, Quaternion.identity);
                         activeNPCs.Add(newNPC);
                         Debug.Log("Spawn3");    
 
