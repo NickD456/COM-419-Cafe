@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     private int npcCount = 0;
     private int money = 0;
     public List<GameObject> npcArray;
-    public List<GameObject> recruitedNPC;    
+    public List<GameObject> recruitedNPC;   
     public int dayNum = 1;
     private GameManager gameManager;
     public TMP_Text DayNum;
@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public bool canEnter = false;
     public bool canTalk = true;
     public bool turnBack = false;
-    int maxRecruited = 3;
+    public int maxRecruited = 13;
 
 
 

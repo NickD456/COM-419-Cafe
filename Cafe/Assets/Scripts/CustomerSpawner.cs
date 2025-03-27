@@ -24,7 +24,11 @@ public class CustomerSpawner : MonoBehaviour
 
     public List<GameObject> customerTextPrefabs;
     public List<GameObject> recruitNPC;
-    
+
+    private int numRecNPCs = 0;
+    private int maxRec = 0;
+
+
 
     private GameManager gameManager;
 
@@ -33,14 +37,19 @@ public class CustomerSpawner : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpawnCustomerRoutine());
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        maxRec = gameManager.maxRecruited;
+        Debug.Log(gameManager.maxRecruited);
+        
+        StartCoroutine(SpawnCustomerRoutine());
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        numRecNPCs = gameManager.recruitedNPC.Count;
     }
 
     IEnumerator SpawnCustomerRoutine()
@@ -64,8 +73,48 @@ public class CustomerSpawner : MonoBehaviour
     {
         if (totalSpawned < maxCustomers)
         {
+            GameObject newNPC = null;
+            int randomCustOrNPC = 2;
+            Debug.Log(randomCustOrNPC);
+
+            switch (randomCustOrNPC)
+            {
+                case 0:
+                    newNPC = Instantiate(npcPrefab, spawnPoint.position, Quaternion.identity);
+                    break;
+
+                case 1:
+                    newNPC = Instantiate(npcPrefab, spawnPoint.position, Quaternion.identity);
+                    break;
+
+                case 2:
+                   
+                    Debug.Log(numRecNPCs);
+                    Debug.Log(maxRec);
+                    if (numRecNPCs <= maxRec)
+                    {
+                        newNPC = Instantiate(npcPrefab, spawnPoint.position, Quaternion.identity);
+                        Debug.Log("NPC Spawned");
+                        break;
+                        
+                    }
+                    else
+                    {
+                        Debug.Log("NPC not Spawned");
+                        goto case 3;
+                    }
+
+                case 3:
+                    newNPC = Instantiate(npcPrefab, spawnPoint.position, Quaternion.identity);
+                    break;
+
+                case 4:
+                    newNPC = Instantiate(npcPrefab, spawnPoint.position, Quaternion.identity);
+                    break;
+
+            }
+
             
-            GameObject newNPC = Instantiate(npcPrefab, spawnPoint.position, Quaternion.identity);
             int randomOrder = Random.Range(0, 2);
             int randomCustomerText = 0;
 

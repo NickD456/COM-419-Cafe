@@ -3139,11 +3139,6 @@ MonoBehaviour:
   - {fileID: 1342576216873570141, guid: d79aae87b474ae544b1f91def8806c37, type: 3}
   - {fileID: 5817563712238254446, guid: 80194eba3e077e84aae30b460496e848, type: 3}
   - {fileID: 7786269742312478573, guid: 20069b3fc5a98f246b3f7a6f6cffac77, type: 3}
-  - {fileID: 2895617840851092300, guid: 2f859ecdb1465e74792e9354f3eba4d9, type: 3}
-  - {fileID: 2065201998798351219, guid: e10134b9f633e2f479433c5103359fbb, type: 3}
-  - {fileID: 5689923310179608570, guid: a469b238edabad149839810b0a73ac68, type: 3}
-  - {fileID: 6729020035812187551, guid: e92fe66f9c974694095d1849d1c7a23a, type: 3}
-  - {fileID: 8328731280033390428, guid: c38fd6e99906f21478276e0f04ee1c48, type: 3}
   recruitedNPC: []
   dayNum: 1
   DayNum: {fileID: 0}
@@ -3151,6 +3146,7 @@ MonoBehaviour:
   canEnter: 0
   canTalk: 1
   turnBack: 0
+  maxRecruited: 13
 --- !u!4 &1124491229
 Transform:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Rendering;
 
 public class NightEnd : MonoBehaviour
 {
@@ -21,19 +22,25 @@ private Weppon weppon;
     void Start()
     {
         zombieSpawn = GameObject.Find("Zombie Spawn").GetComponent<ZombieSpawn>();
-        
-       // weppon.audioSource = GetComponent<AudioSource>();
 
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        // weppon.audioSource = GetComponent<AudioSource>();
+
         
+        
+
+       
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-
-        if(zombieCount <= 0 )
+        if (gameManager == null)
+        {
+            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        }
+        if (zombieCount <= 0 )
         {
             StartCoroutine(FadeToBlackAndLoadScene());
         }
@@ -52,7 +59,10 @@ private Weppon weppon;
             fadeImage.color = Color.Lerp(startColor, endColor, elapsedTime / fadeDuration);
             yield return null;
         }
-
+        if (gameManager == null)
+        {
+            Debug.LogError("GameManager not found");
+        }
         fadeImage.color = endColor;
         gameManager.dayNum += 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
