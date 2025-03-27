@@ -9,8 +9,8 @@ public class Weppon : MonoBehaviour
     public float bulletVelocity = 30;
     public float bulletPrefabTime = 3f;
 
-    //public AudioClip gunshotSound; 
-    //public AudioSource audioSource;
+    public AudioClip gunshotSound; 
+    public AudioSource audioSource;
 
     // Update is called once per frame
     void Update()
@@ -20,21 +20,18 @@ public class Weppon : MonoBehaviour
      if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             FireWeapon();
-            PlayAudioGun();
+            //FPlayAudioGun();
         }
     }
 
     private void FireWeapon()
     {
-
+        audioSource.PlayOneShot(gunshotSound);
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
-
-       
-
 
         bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward.normalized * bulletVelocity, ForceMode.Impulse);
         //destroy bullet
-        //audioSource.PlayOneShot(gunshotSound);
+        //
 
 
         StartCoroutine(DestroyBulletAfterTime(bullet,bulletPrefabTime));
@@ -50,7 +47,7 @@ public class Weppon : MonoBehaviour
 
     void PlayAudioGun()
     {
-       // audioSource.PlayOneShot(gunshotSound);
+     audioSource.PlayOneShot(gunshotSound);
 
     }
 }
