@@ -9,9 +9,10 @@ public class NavScript : MonoBehaviour
     private GameObject end;
     private GameObject doorSpot;
     private GameObject recruitSpot;
+    private CustomerSpawner customerSpawner;
     private static DrinkManager drinkManager;
     private GameManager gameManager;
-    private Animator anim;
+    private Animator anim1;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,7 +25,9 @@ public class NavScript : MonoBehaviour
         recruitSpot = GameObject.FindWithTag("Recruit Spot");
         drinkManager = GameObject.Find("DrinkManager").GetComponent<DrinkManager>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        anim = GetComponent<Animator>();
+        customerSpawner = GameObject.Find("Customer Spawner").GetComponent<CustomerSpawner>();
+
+        anim1 = GetComponent<Animator>();
 
     }
 
@@ -54,17 +57,34 @@ public class NavScript : MonoBehaviour
 
         if(agent.remainingDistance <= 0.4f)
         {
-            anim.SetBool("Walk", false);
+            anim1.SetBool("Walk", false);
         }
         else
         {
-            Debug.Log("Starting Walk Animation");
-            anim.SetBool("Walk", true);
+            
+            anim1.SetBool("Walk", true);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.tag == "End Spot")
+        {
+            Destroy(this.gameObject);
+            customerSpawner.RemoveNPCFromList(this.gameObject);
+            drinkManager.Reset();
+        }
+        if (other.gameObject.tag == "Recruit Spot")
+        {
+            
+            customerSpawner.RemoveNPCFromList(this.gameObject);
+            gameManager.npcArray[0] = this.gameObject;
+
+            Destroy(this.gameObject);
+
+            drinkManager.Reset();
+        }
     }
+
+
 }

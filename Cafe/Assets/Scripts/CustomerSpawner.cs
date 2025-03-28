@@ -11,7 +11,7 @@ public class CustomerSpawner : MonoBehaviour
     public GameObject npcPrefab; 
     public Transform spawnPoint; 
     public float spawnInterval = 5f; 
-    public int maxCustomers = 5;
+    public int maxCustomers = 3;
     public int maxNPCsOnMap = 2; 
     public int resumeSpawnThreshold = 2;
     private int totalSpawned = 0; 
@@ -25,6 +25,7 @@ public class CustomerSpawner : MonoBehaviour
     public List<GameObject> customerTextPrefabs;
     public List <GameObject> recruitTextPrefabs;
     public List<GameObject> recruitNPC = new List<GameObject>();
+    public List<GameObject> customerNPC = new List<GameObject>();
 
     private int numRecNPCs = 0;
     private int maxRec = 0;
@@ -41,7 +42,8 @@ public class CustomerSpawner : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         maxRec = gameManager.maxRecruited;
         Debug.Log(gameManager.maxRecruited);
-        
+
+        maxCustomers = maxCustomers + gameManager.dayNum;
         StartCoroutine(SpawnCustomerRoutine());
         
         
@@ -75,17 +77,19 @@ public class CustomerSpawner : MonoBehaviour
         if (totalSpawned < maxCustomers)
         {
             GameObject newNPC = null;
-            int randomCustOrNPC = 2;
-            
+            int randomCustOrNPC = Random.Range(0,5);
+       
+
+
 
             switch (randomCustOrNPC)
             {
                 case 0:
-                    newNPC = Instantiate(npcPrefab, spawnPoint.position, Quaternion.identity);
+                    newNPC = Instantiate(customerNPC[0], spawnPoint.position, Quaternion.identity);
                     break;
 
                 case 1:
-                    newNPC = Instantiate(npcPrefab, spawnPoint.position, Quaternion.identity);
+                    newNPC = Instantiate(customerNPC[0], spawnPoint.position, Quaternion.identity);
                     break;
 
                 case 2:
@@ -115,11 +119,11 @@ public class CustomerSpawner : MonoBehaviour
                     }
 
                 case 3:
-                    newNPC = Instantiate(npcPrefab, spawnPoint.position, Quaternion.identity);
+                    newNPC = Instantiate(customerNPC[1], spawnPoint.position, Quaternion.identity);
                     break;
 
                 case 4:
-                    newNPC = Instantiate(npcPrefab, spawnPoint.position, Quaternion.identity);
+                    newNPC = Instantiate(customerNPC[1], spawnPoint.position, Quaternion.identity);
                     break;
 
             }

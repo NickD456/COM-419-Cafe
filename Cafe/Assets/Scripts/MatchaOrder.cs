@@ -41,12 +41,7 @@ public class MatchaOrder : MonoBehaviour
             }
         }
 
-        if(other.gameObject.tag == "End Spot")
-        {
-            Destroy(this.gameObject);
-            customerSpawner.RemoveNPCFromList(this.gameObject);
-            drinkManager.Reset();
-        }
+        
 
         
     }
@@ -60,7 +55,7 @@ public class MatchaOrder : MonoBehaviour
             drinkManager.Reset();
             Debug.Log("order right");
             child = null;
-            GetComponent<Renderer>().material.color = Color.green;
+            
             orderTaken = true;
             Transform orderRight = transform.Find("Order Right ");
             if (orderRight != null)
@@ -76,7 +71,7 @@ public class MatchaOrder : MonoBehaviour
             correctOrder = false;
             drinkManager.Reset();
             child = null;
-            GetComponent<Renderer>().material.color = Color.red;
+            
             orderTaken = true;
             Transform orderWrong = transform.Find("Order Wrong Text");
             if (orderWrong != null)

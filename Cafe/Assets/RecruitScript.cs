@@ -19,16 +19,9 @@ public class RecruitScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Recruit NPC")
         {
-            gameManager.isTalking = false;
-            gameManager.canEnter = false;
-            gameManager.canTalk = true;
-            gameManager.turnBack = false;
-            gameManager.isRecruit = false;
+            
 
-            gameManager.npcArray[0] = other.gameObject;
-
-            Destroy(other.gameObject);
-
+            
             
 
 

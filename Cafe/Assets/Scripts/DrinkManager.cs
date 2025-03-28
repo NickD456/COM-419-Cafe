@@ -64,6 +64,11 @@ public class DrinkManager : MonoBehaviour
         hasMilk= false;
         hasTea= false;
         orderComp = false;
+        gameManager.turnBack = false;
+        gameManager.isRecruit = false; 
+        gameManager.canEnter = false;
+        gameManager.canTalk = true;
+        gameManager.isTalking = false;
     }
 
     public void setOrder()
