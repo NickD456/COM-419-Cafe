@@ -63,7 +63,7 @@ public class ZombieSpawn : MonoBehaviour
     IEnumerator SpawnCustomerRoutine()
     {
         //while (totalSpawned < maxCustomers)
-        for(int i=0; i < (2*(gameManager.dayNum) +2); i++)
+        for(int i=0; i < (2*(gameManager.dayNum) +5); i++)
         {
           //  Debug.Log(gameManager.dayNum + "Day");
            // Debug.Log(nightend.zombieCount + "Zomb");
