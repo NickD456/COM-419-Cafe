@@ -26,6 +26,11 @@ public class TalkReset : MonoBehaviour
             gameManager.turnBack = false;
             Debug.Log("Can Enter: " + gameManager.canEnter);
 
+            if(other.gameObject.tag == "Recruit NPC")
+            {
+                Destroy(other.gameObject);
+            }
+
 
            
         }

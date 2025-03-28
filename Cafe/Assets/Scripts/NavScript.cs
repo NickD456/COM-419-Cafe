@@ -11,6 +11,7 @@ public class NavScript : MonoBehaviour
     private GameObject recruitSpot;
     private static DrinkManager drinkManager;
     private GameManager gameManager;
+    private Animator anim;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,12 +24,14 @@ public class NavScript : MonoBehaviour
         recruitSpot = GameObject.FindWithTag("Recruit Spot");
         drinkManager = GameObject.Find("DrinkManager").GetComponent<DrinkManager>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        anim = GetComponent<Animator>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        agent.stoppingDistance = 0.4f;
 
         if (drinkManager.orderComp == true || gameManager.turnBack == true)
         {
@@ -48,6 +51,16 @@ public class NavScript : MonoBehaviour
             agent.destination = recruitSpot.transform.position;
         }
         
+
+        if(agent.remainingDistance <= 0.4f)
+        {
+            anim.SetBool("Walk", false);
+        }
+        else
+        {
+            Debug.Log("Starting Walk Animation");
+            anim.SetBool("Walk", true);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
