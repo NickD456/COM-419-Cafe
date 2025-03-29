@@ -7,16 +7,16 @@ public class KeyCheck : MonoBehaviour
     private Character character;
     private GameManager gameManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void OnEnable()
     {
-        AddSubscriber();
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        AddSubscriber();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     public void AddSubscriber()

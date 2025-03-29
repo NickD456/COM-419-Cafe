@@ -70,19 +70,24 @@ public class NavScript : MonoBehaviour
     {
         if (other.gameObject.tag == "End Spot")
         {
-            Destroy(this.gameObject);
-            customerSpawner.RemoveNPCFromList(this.gameObject);
+            
             drinkManager.Reset();
+            customerSpawner.RemoveNPCFromList(this.gameObject);
+            Destroy(this.gameObject);
+            
         }
         if (other.gameObject.tag == "Recruit Spot")
         {
-            
-            customerSpawner.RemoveNPCFromList(this.gameObject);
+            drinkManager.Reset();
             gameManager.npcArray[0] = this.gameObject;
-
+            customerSpawner.RemoveNPCFromList(this.gameObject);
             Destroy(this.gameObject);
 
-            drinkManager.Reset();
+
+            
+
+           
+
         }
     }
 

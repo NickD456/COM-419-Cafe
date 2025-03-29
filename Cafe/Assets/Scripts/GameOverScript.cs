@@ -8,6 +8,8 @@ public class GameOverScript : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     // Update is called once per frame

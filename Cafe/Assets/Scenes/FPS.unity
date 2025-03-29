@@ -3284,91 +3284,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1239209055
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 20.185448
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 40.676
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 33.461952
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3938035057199832820, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_BaseOffset
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 4209100096960880664, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_Name
-      value: Yaku J Ignite@Zombie Running
-      objectReference: {fileID: 0}
-    - target: {fileID: 6592357965386012788, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_Height
-      value: 1.941503
-      objectReference: {fileID: 0}
-    - target: {fileID: 6592357965386012788, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_Radius
-      value: 0.4311316
-      objectReference: {fileID: 0}
-    - target: {fileID: 6592357965386012788, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_Center.x
-      value: -0.15113156
-      objectReference: {fileID: 0}
-    - target: {fileID: 6592357965386012788, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_Center.y
-      value: 1.1842638
-      objectReference: {fileID: 0}
-    - target: {fileID: 8352463720152198594, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_Mass
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8352463720152198594, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_Constraints
-      value: 32
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
 --- !u!4 &1278956099 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1065435822876289207, guid: 32cbd06d1e4657b4fb3517a11af91693, type: 3}
@@ -3891,6 +3806,71 @@ MonoBehaviour:
   bookText: {fileID: 0}
   bookBrownSugar: {fileID: 0}
   bookMatcha: {fileID: 0}
+--- !u!1001 &1534688851
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 32.383186
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 42.783695
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209100096960880664, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_Name
+      value: Yaku J Ignite@Zombie Running
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352463720152198594, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_AngularDrag
+      value: 20.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352463720152198594, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
 --- !u!1 &1540424783
 GameObject:
   m_ObjectHideFlags: 0
@@ -6144,6 +6124,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6724323035553317915, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6724323035553317919, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
       propertyPath: m_Mass
       value: 0.5
@@ -6174,6 +6158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6956433914710798844, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
+    - {fileID: 1468467667468601705, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6724323037085978117, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
@@ -6222,6 +6207,6 @@ SceneRoots:
   - {fileID: 286970072}
   - {fileID: 1797229397}
   - {fileID: 1114154880}
-  - {fileID: 1239209055}
   - {fileID: 845197555}
   - {fileID: 1864321252}
+  - {fileID: 1534688851}
