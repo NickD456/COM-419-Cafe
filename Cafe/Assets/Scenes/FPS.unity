@@ -2699,9 +2699,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4427888929534666457}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -440, y: -371}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 100, y: 12}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1112679715
@@ -4573,9 +4573,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4427888929534666457}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -439.99994, y: -280.10004}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 100.00006, y: 102.89996}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1783125208
@@ -5148,6 +5148,63 @@ MonoBehaviour:
   ZombCount: {fileID: 1783125208}
   hasRun: 0
   rand1: 0
+--- !u!1001 &2018630622
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21.757843
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 40.675995
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 38.664555
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209100096960880664, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
+      propertyPath: m_Name
+      value: Yaku J Ignite@Zombie Running
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
 --- !u!1001 &2020048342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5647,87 +5704,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6989267400013426816, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
   m_PrefabInstance: {fileID: 4427888929534666456}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2645587797247533933
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 21.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 42.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 44.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3540509425349048994, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3938035057199832820, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_Speed
-      value: 14.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 3938035057199832820, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_BaseOffset
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 4209100096960880664, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_Name
-      value: Yaku J Ignite@Zombie Running
-      objectReference: {fileID: 0}
-    - target: {fileID: 6592357965386012788, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_Height
-      value: 1.9052911
-      objectReference: {fileID: 0}
-    - target: {fileID: 6592357965386012788, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_Center.y
-      value: 1.2023718
-      objectReference: {fileID: 0}
-    - target: {fileID: 6592357965386012788, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8352463720152198594, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: cccf2197c03f42e41b9bd0ddec33826d, type: 3}
 --- !u!1001 &4427888929534666456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5915,4 +5891,4 @@ SceneRoots:
   - {fileID: 286970072}
   - {fileID: 1797229397}
   - {fileID: 1114154880}
-  - {fileID: 2645587797247533933}
+  - {fileID: 2018630622}

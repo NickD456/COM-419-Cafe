@@ -8,7 +8,7 @@ public class ZombieAI : MonoBehaviour
     //public GameObject Target;
     public float speed = 1.5f;
     public Transform Player;
-    public float updatePath = .1f;
+    public float updatePath = 1f;
     public GameObject gun;
 
     //public Transform player;
