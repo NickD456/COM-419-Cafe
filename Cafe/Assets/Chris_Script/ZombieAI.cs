@@ -8,7 +8,7 @@ public class ZombieAI : MonoBehaviour
     //public GameObject Target;
     public float speed = 1.5f;
     public Transform Player;
-    public float updatePath = 1f;
+    public float updatePath = .1f;
     public GameObject gun;
 
     //public Transform player;
@@ -33,7 +33,7 @@ public class ZombieAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
+        transform.LookAt(GameObject.FindGameObjectWithTag("playertarget").transform);
        // transform.Translate(Vector3.forward *Time.deltaTime * speed);
 
 

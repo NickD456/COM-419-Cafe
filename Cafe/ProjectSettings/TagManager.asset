@@ -19,6 +19,7 @@ TagManager:
   - Door Spot
   - Recruit NPC
   - Recruit Spot
+  - playertarget
   layers:
   - Default
   - TransparentFX
