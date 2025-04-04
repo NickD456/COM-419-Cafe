@@ -204,7 +204,7 @@ public class FirstPersonController : MonoBehaviour
     private void Update()
     {
 
-        if(gameManager.isTalking && gameManager.canTalk)
+        if(gameManager.isTalking && gameManager.canTalk || gameManager.isPaused)
         {
             
             UnlockMouse();

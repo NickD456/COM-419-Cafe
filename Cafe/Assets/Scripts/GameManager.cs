@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public bool isRecruit = false;
     public int maxRecruited = 13;
     public string KeyName;
-
+    public bool isPaused = false;
 
 
 
