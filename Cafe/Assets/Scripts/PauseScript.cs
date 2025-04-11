@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
@@ -60,5 +61,18 @@ public class PauseScript : MonoBehaviour
     public void quit()
     {
         Application.Quit(); 
+    }
+
+    public void MainMenu()
+    {
+        if (isPaused)
+        {
+            gameManager.isPaused = false;
+            Time.timeScale = 1f;
+            isPaused = false;
+            pauseScreen.SetActive(false);
+
+        }
+        SceneManager.LoadScene(0);
     }
 }

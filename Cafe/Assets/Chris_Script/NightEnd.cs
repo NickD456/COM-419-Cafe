@@ -43,6 +43,10 @@ private Weppon weppon;
         if (zombieCount <= 0 )
         {
             StartCoroutine(FadeToBlackAndLoadScene());
+            if (gameManager.dayNum > PlayerPrefs.GetInt("HighScore", 0))
+            {
+                PlayerPrefs.SetInt("HighScore", gameManager.dayNum);
+            }
         }
         
     }

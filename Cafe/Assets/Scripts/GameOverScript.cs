@@ -16,11 +16,13 @@ public class GameOverScript : MonoBehaviour
     void Update()
     {
         Days.text = "Days Survived: " + gameManager.dayNum;
+        
+        
     }
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
         Destroy(gameManager.gameObject);
     }
 
