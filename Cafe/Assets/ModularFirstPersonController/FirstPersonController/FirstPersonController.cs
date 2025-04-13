@@ -208,11 +208,15 @@ public class FirstPersonController : MonoBehaviour
         {
             
             UnlockMouse();
+            cameraCanMove = false;
+            playerCanMove = false;
         }
         else
         {
             
             LockMouse();
+            cameraCanMove = true;
+            playerCanMove = true;
         }
         #region Camera
 

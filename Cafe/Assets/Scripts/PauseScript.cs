@@ -55,6 +55,7 @@ public class PauseScript : MonoBehaviour
             isPaused = false;   
             pauseScreen.SetActive(false);
             
+            
         }
     }
 
@@ -71,6 +72,7 @@ public class PauseScript : MonoBehaviour
             Time.timeScale = 1f;
             isPaused = false;
             pauseScreen.SetActive(false);
+
 
         }
         SceneManager.LoadScene(0);
