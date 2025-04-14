@@ -10,8 +10,9 @@ namespace HarmonyDialogueSystem
         [Tooltip("The Dialogue File to use")]
         public TextAsset dialogueFile;
 
-        private void Awake()
+        private void Start()
         {
+            Debug.Log("DialogueStartTrigger started");
             DialogueManager.instance.EnterDialogueMode(dialogueFile, fileTypeUsed);
         }
     }

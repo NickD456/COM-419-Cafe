@@ -35,6 +35,7 @@ public class Pickup : MonoBehaviour
     private Vector3 originalItem;
 
     private DrinkManager drinkManager;
+    private GameManager gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,6 +45,7 @@ public class Pickup : MonoBehaviour
         interact = false;
         isBook = false;
         drinkManager = GameObject.Find("DrinkManager").GetComponent<DrinkManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -243,6 +245,7 @@ public class Pickup : MonoBehaviour
     {
         Destroy(heldItem);
         hasItem = false;
+        gameManager.SubMoney(5);
         drinkManager.Reset();
     }
 

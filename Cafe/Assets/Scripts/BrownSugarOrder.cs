@@ -9,6 +9,7 @@ public class BrownSugarOrder : MonoBehaviour
     private bool orderTaken;
    private Transform brownSugarChild;
     private bool ordered;
+    private GameManager gameManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +17,7 @@ public class BrownSugarOrder : MonoBehaviour
         orderTaken = false;
         ordered = false;
         customerSpawner = GameObject.Find("Customer Spawner").GetComponent<CustomerSpawner>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -52,7 +54,7 @@ public class BrownSugarOrder : MonoBehaviour
             drinkManager.Reset();
             Debug.Log("order right");
             child = null;
-            
+            gameManager.AddMoney(7);
             orderTaken = true;
             Transform orderRight = transform.Find("Order Right ");
             if (orderRight != null)
@@ -69,7 +71,8 @@ public class BrownSugarOrder : MonoBehaviour
             correctOrder = false;
             drinkManager.Reset();
             child = null;
-           
+            gameManager.SubMoney(5);
+
             orderTaken = true;
             Transform orderWrong = transform.Find("Order Wrong Text");
             if (orderWrong != null)

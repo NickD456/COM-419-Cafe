@@ -30,7 +30,7 @@ public class KeyCheck : MonoBehaviour
 
         if (character.LookForCharacterTag(tag, out string value))
         {
-            Debug.Log(value);
+            
             if(value == "yes")
             {
                 if (tag == "enter")
@@ -41,13 +41,13 @@ public class KeyCheck : MonoBehaviour
                 {
                     gameManager.isRecruit = true;
                 }
-                Debug.Log("Now here");
+               
                 gameManager.canTalk = false;
             }
             else if (value == "no")
             {
                 gameManager.canEnter = false;
-                Debug.Log("Not here");
+             
                 gameManager.canTalk = false;
                 gameManager.turnBack = true;
             }

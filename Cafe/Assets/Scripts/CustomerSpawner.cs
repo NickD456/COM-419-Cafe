@@ -77,7 +77,7 @@ public class CustomerSpawner : MonoBehaviour
         if (totalSpawned < maxCustomers)
         {
             GameObject newNPC = null;
-            int randomCustOrNPC = Random.Range(0,5);
+            int randomCustOrNPC = 2;
        
 
 
@@ -158,7 +158,7 @@ public class CustomerSpawner : MonoBehaviour
 
                 }
             }
-            if (newNPC.tag == "Recruit NPC")
+            if (newNPC.tag == "Recruit NPC1" || newNPC.tag == "Recruit NPC2" || newNPC.tag == "Recruit NPC3" || newNPC.tag == "Recruit NPC4")
             {
                 gameManager.KeyName = "recruit";
                 switch (randomCustomerText)

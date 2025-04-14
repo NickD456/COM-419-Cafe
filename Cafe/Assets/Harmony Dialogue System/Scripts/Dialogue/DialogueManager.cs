@@ -138,9 +138,10 @@ namespace HarmonyDialogueSystem
         /// <param name="fileTypeUsed">The File Type Used</param>
         public void EnterDialogueMode(TextAsset file, FileTypeUsed fileTypeUsed)
         {
+            Debug.Log("Dialogue Manager Entering Dialogue Mode");
             if (file == null)
             {
-                Debug.LogError("Can't find the necessary file to generate a dialogue");
+                Debug.Log("Can't find the necessary file to generate a dialogue");
                 return;
             }
 
@@ -149,6 +150,8 @@ namespace HarmonyDialogueSystem
             dialogueIsPlaying = true;
             dialogueSystemOnEvent?.Invoke();
             DialogueUI.SetActive(true);
+
+            Debug.Log("sddd");
 
             ContinueStory();
         }
@@ -172,6 +175,7 @@ namespace HarmonyDialogueSystem
         /// <exception cref="Exception"></exception>
         public void ContinueStory()
         {
+            Debug.Log("Dialogue Manager Entering  Mode");
             if (currentStoryObject == null) throw new Exception("No StoryObject found. EnterDialogueMode function has probably been bypassed or there is an error that doesn't allow it to be created");
 
             if (currentStoryObject.CanContinue())

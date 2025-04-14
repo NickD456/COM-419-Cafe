@@ -79,9 +79,11 @@ public class NavScript : MonoBehaviour
         if (other.gameObject.tag == "Recruit Spot")
         {
             drinkManager.Reset();
-            gameManager.npcArray[0] = this.gameObject;
+            
+            
+           
             customerSpawner.RemoveNPCFromList(this.gameObject);
-            Destroy(this.gameObject);
+          
 
 
             

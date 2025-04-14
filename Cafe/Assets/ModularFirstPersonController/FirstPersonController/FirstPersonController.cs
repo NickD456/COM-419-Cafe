@@ -16,11 +16,13 @@ using UnityEngine.UI;
 
 public class FirstPersonController : MonoBehaviour
 {
+    public GameObject talkText;
     private Rigidbody rb;
 
     #region Camera Movement Variables
 
     public Camera playerCamera;
+    
 
     public float fov = 60f;
     public bool invertCamera = false;
@@ -31,6 +33,7 @@ public class FirstPersonController : MonoBehaviour
     // Crosshair
     public bool lockCursor = true;
     public bool crosshair = true;
+    
     public Sprite crosshairImage;
     public Color crosshairColor = Color.white;
 
@@ -63,6 +66,7 @@ public class FirstPersonController : MonoBehaviour
 
     // Internal Variables
     private bool isWalking = false;
+   
 
     #region Sprint
 
@@ -207,13 +211,37 @@ public class FirstPersonController : MonoBehaviour
         if(gameManager.isTalking && gameManager.canTalk || gameManager.isPaused)
         {
             
-            UnlockMouse();
-            cameraCanMove = false;
-            playerCanMove = false;
+            if (gameManager.isTalking && gameManager.canTalk)
+            {
+                
+                talkText.SetActive(true);
+                
+
+                if (Input.GetKeyDown("i"))
+                {
+                    
+                    UnlockMouse();
+                    cameraCanMove = false;
+                    playerCanMove = false;
+                }
+            }
+            if (gameManager.isPaused)
+            {
+                
+                UnlockMouse();
+                cameraCanMove = false;
+                playerCanMove = false;
+            }
+
+            
         }
         else
         {
-            
+            Debug.Log("Game is paused");
+            if (talkText != null)
+            {
+                talkText.SetActive(false);
+            }
             LockMouse();
             cameraCanMove = true;
             playerCanMove = true;
@@ -597,6 +625,7 @@ public class FirstPersonController : MonoBehaviour
         EditorGUILayout.Space();
 
         fpc.playerCamera = (Camera)EditorGUILayout.ObjectField(new GUIContent("Camera", "Camera attached to the controller."), fpc.playerCamera, typeof(Camera), true);
+        fpc.talkText = (GameObject)EditorGUILayout.ObjectField(new GUIContent("Talk Text", "UI element that appears when talking."), fpc.talkText, typeof(GameObject), true);
         fpc.fov = EditorGUILayout.Slider(new GUIContent("Field of View", "The camera’s view angle. Changes the player camera directly."), fpc.fov, fpc.zoomFOV, 179f);
         fpc.cameraCanMove = EditorGUILayout.ToggleLeft(new GUIContent("Enable Camera Rotation", "Determines if the camera is allowed to move."), fpc.cameraCanMove);
 

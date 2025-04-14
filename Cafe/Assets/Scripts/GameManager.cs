@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     //Number of NPCs. Will change when NPC is recruited or dies.
     private int npcCount = 0;
-    private int money = 0;
+    public int money = 0;
     public List<GameObject> npcArray;
     public List<GameObject> recruitedNPC;   
     public int dayNum = 1;
