@@ -22,6 +22,10 @@ public class GameManager : MonoBehaviour
     public int maxRecruited = 13;
     public string KeyName;
     public bool isPaused = false;
+    public bool sentLoot = false;
+    public bool lootSpawned = false;
+    public string lootName;
+
 
 
 

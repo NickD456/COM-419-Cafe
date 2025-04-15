@@ -15,8 +15,9 @@ public class KeyCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AddSubscriber();
+        
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        AddSubscriber();
     }
 
     public void AddSubscriber()
@@ -27,11 +28,13 @@ public class KeyCheck : MonoBehaviour
     public void GetCharacterTag(Character character)
     {
         string tag = gameManager.KeyName;
+       
 
         if (character.LookForCharacterTag(tag, out string value))
         {
-            
-            if(value == "yes")
+          
+
+            if (value == "yes")
             {
                 if (tag == "enter")
                 {
@@ -41,15 +44,29 @@ public class KeyCheck : MonoBehaviour
                 {
                     gameManager.isRecruit = true;
                 }
-               
-                gameManager.canTalk = false;
+                if(tag == "send_out")
+                {
+                    gameManager.sentLoot = true;
+                }
+
+                gameManager.isTalking = false;
+
+
             }
             else if (value == "no")
             {
-                gameManager.canEnter = false;
-             
-                gameManager.canTalk = false;
-                gameManager.turnBack = true;
+                if (tag != "send_out")
+                {
+
+                    gameManager.canEnter = false;
+                    gameManager.turnBack = true;
+                    
+                }
+
+                gameManager.isTalking = false;
+
+
+
             }
 
         }

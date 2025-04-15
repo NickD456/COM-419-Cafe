@@ -1,3 +1,5 @@
+using System.Linq;
+using Ink.Parsed;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -23,6 +25,20 @@ public class LootingSpawn : MonoBehaviour
 
     public void SpawnRecruitedNPCS()
     {
+        bool hasValue = gameManager.recruitedNPC.Any();
+        if (hasValue)
+        {
+       
+            gameManager.lootSpawned = true;
+            gameManager.lootName = "send_out";
+        }
+        else
+        {
+         
+            gameManager.lootSpawned = false;
+            gameManager.lootName = "none";
+        }
+
         if (gameManager.recruitedNPC[0] != null)
         {
             Quaternion rotation = Quaternion.Euler(0, 90, 0);

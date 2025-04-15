@@ -208,10 +208,10 @@ public class FirstPersonController : MonoBehaviour
     private void Update()
     {
 
-        if(gameManager.isTalking && gameManager.canTalk || gameManager.isPaused)
+        if(gameManager.isTalking|| gameManager.isPaused)
         {
             
-            if (gameManager.isTalking && gameManager.canTalk)
+            if (gameManager.isTalking)
             {
                 
                 talkText.SetActive(true);
@@ -237,7 +237,7 @@ public class FirstPersonController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Game is paused");
+            
             if (talkText != null)
             {
                 talkText.SetActive(false);

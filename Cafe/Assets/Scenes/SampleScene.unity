@@ -2178,6 +2178,35 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.043294143, y: 0.02, z: 0.0008939384}
   m_Center: {x: -0.011631489, y: 2.4587042e-16, z: 0.080889516}
+--- !u!1 &477966447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2429109778715620532, guid: 182d7ffa8e2d4c34a9b21961a926fe62, type: 3}
+  m_PrefabInstance: {fileID: 2133736231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &477966451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477966447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23b98364ee8d4404491f7091f1399a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &477966452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477966447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24bcac54a39058041af09b1be3d58a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &552792675
 GameObject:
   m_ObjectHideFlags: 0
@@ -9413,6 +9442,18 @@ PrefabInstance:
       propertyPath: settingsType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 710804578970272599, guid: 182d7ffa8e2d4c34a9b21961a926fe62, type: 3}
+      propertyPath: dialogueExitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 477966452}
+    - target: {fileID: 710804578970272599, guid: 182d7ffa8e2d4c34a9b21961a926fe62, type: 3}
+      propertyPath: dialogueExitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DestroyLootObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 710804578970272599, guid: 182d7ffa8e2d4c34a9b21961a926fe62, type: 3}
+      propertyPath: dialogueExitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DestroyTalk, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2429109778715620532, guid: 182d7ffa8e2d4c34a9b21961a926fe62, type: 3}
       propertyPath: m_Name
       value: triggerRecruit
@@ -9424,7 +9465,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2429109778715620532, guid: 182d7ffa8e2d4c34a9b21961a926fe62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 477966451}
+    - targetCorrespondingSourceObject: {fileID: 2429109778715620532, guid: 182d7ffa8e2d4c34a9b21961a926fe62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 477966452}
   m_SourcePrefab: {fileID: 100100000, guid: 182d7ffa8e2d4c34a9b21961a926fe62, type: 3}
 --- !u!1 &1004402535033904
 GameObject:
@@ -25372,7 +25419,7 @@ PrefabInstance:
     - target: {fileID: 3456232696248572309, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
       propertyPath: 'recruitedNPC.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1820351795}
     - target: {fileID: 5148508553817909043, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
