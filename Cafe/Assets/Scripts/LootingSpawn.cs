@@ -9,6 +9,10 @@ public class LootingSpawn : MonoBehaviour
     public GameObject spot2;
     public GameObject spot3;
     public GameObject spot4;
+    public GameObject spot1Talk;
+    public GameObject spot2Talk;
+    public GameObject spot3Talk;
+    public GameObject spot4Talk;
     private GameManager gameManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,19 +50,35 @@ public class LootingSpawn : MonoBehaviour
             Destroy(newNPC.GetComponent<NavMeshAgent>());
             Destroy(newNPC.GetComponent<Rigidbody>());
             newNPC.AddComponent<AnimeSet1>();
+            spot1Talk.SetActive(true);
 
         }
         if (gameManager.recruitedNPC[1] != null)
         {
+            Quaternion rotation = Quaternion.Euler(0, 90, 0);
             GameObject newNPC = Instantiate(gameManager.recruitedNPC[1], spot2.transform.position, Quaternion.identity);
+            Destroy(newNPC.GetComponent<NavMeshAgent>());
+            Destroy(newNPC.GetComponent<Rigidbody>());
+            newNPC.AddComponent<AnimeSet1>();
+            spot2Talk.SetActive(true);
         }
         if (gameManager.recruitedNPC[2] != null)
         {
+            Quaternion rotation = Quaternion.Euler(0, 90, 0);
             GameObject newNPC = Instantiate(gameManager.recruitedNPC[2], spot3.transform.position, Quaternion.identity);
+            Destroy(newNPC.GetComponent<NavMeshAgent>());
+            Destroy(newNPC.GetComponent<Rigidbody>());
+            newNPC.AddComponent<AnimeSet1>();
+            spot3Talk.SetActive(true);
         }
         if (gameManager.recruitedNPC[3] != null)
         {
+            Quaternion rotation = Quaternion.Euler(0, 90, 0);
             GameObject newNPC = Instantiate(gameManager.recruitedNPC[3], spot4.transform.position, Quaternion.identity);
+            Destroy(newNPC.GetComponent<NavMeshAgent>());
+            Destroy(newNPC.GetComponent<Rigidbody>());
+            newNPC.AddComponent<AnimeSet1>();
+            spot4Talk.SetActive(true);
         }
     }
 }

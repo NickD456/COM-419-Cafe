@@ -39,17 +39,21 @@ public class KeyCheck : MonoBehaviour
                 if (tag == "enter")
                 {
                     gameManager.canEnter = true;
+                    gameManager.destroyCust = true;
                 }
                 if(tag == "recruit")
                 {
                     gameManager.isRecruit = true;
+                    gameManager.destroyCust = true;
                 }
                 if(tag == "send_out")
                 {
                     gameManager.sentLoot = true;
+                    gameManager.destroyTalk = false;
                 }
 
                 gameManager.isTalking = false;
+                
 
 
             }
@@ -60,10 +64,16 @@ public class KeyCheck : MonoBehaviour
 
                     gameManager.canEnter = false;
                     gameManager.turnBack = true;
-                    
-                }
+                    gameManager.destroyCust = true;
 
-                gameManager.isTalking = false;
+                }
+                else if(tag == "send_out")
+                {
+                    gameManager.destroyTalk = false;
+}
+
+
+                    gameManager.isTalking = false;
 
 
 

@@ -208,7 +208,7 @@ public class FirstPersonController : MonoBehaviour
     private void Update()
     {
 
-        if(gameManager.isTalking|| gameManager.isPaused)
+        if(gameManager.isTalking || gameManager.isPaused)
         {
             
             if (gameManager.isTalking)

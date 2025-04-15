@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2429109778715620532
+--- !u!1 &4102341794136671658
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 482437133942393361}
-  - component: {fileID: 7336617973460082487}
-  - component: {fileID: 710804578970272599}
+  - component: {fileID: 2060219528360856894}
+  - component: {fileID: 1184898622500466869}
+  - component: {fileID: 6249204878261020974}
+  - component: {fileID: 4456311544169650282}
+  - component: {fileID: 4396501096158082915}
   m_Layer: 0
   m_Name: triggerRecruit
   m_TagString: Untagged
@@ -18,28 +20,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &482437133942393361
+--- !u!4 &2060219528360856894
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2429109778715620532}
+  m_GameObject: {fileID: 4102341794136671658}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.717, y: -0.85, z: 15.12}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 7.435, y: -1.8796493, z: 67.89}
+  m_LocalScale: {x: 0.81475, y: 1, z: 1.5772159}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7336617973460082487
+--- !u!65 &1184898622500466869
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2429109778715620532}
+  m_GameObject: {fileID: 4102341794136671658}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -54,13 +56,13 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.1701384, y: 1, z: 4.188567}
   m_Center: {x: 0.47506952, y: 0, z: -0.72350264}
---- !u!114 &710804578970272599
+--- !u!114 &6249204878261020974
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2429109778715620532}
+  m_GameObject: {fileID: 4102341794136671658}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d76f14b485037e4a8a0a47309406b7c, type: 3}
@@ -86,9 +88,9 @@ MonoBehaviour:
   dialogueExitEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: FirstPersonController, Assembly-CSharp
-        m_MethodName: LockMouse
+      - m_Target: {fileID: 4396501096158082915}
+        m_TargetAssemblyTypeName: DestroyTalk, Assembly-CSharp
+        m_MethodName: DestroyLootObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -102,3 +104,27 @@ MonoBehaviour:
   fileTypeUsed: 0
   inkJSON: {fileID: 4900000, guid: 516b5debfa2b334419b9ac3283a4a335, type: 3}
   TXTFile: {fileID: 4900000, guid: 2bc3fa58463725d4596b69a72efba11c, type: 3}
+--- !u!114 &4456311544169650282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4102341794136671658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23b98364ee8d4404491f7091f1399a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4396501096158082915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4102341794136671658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24bcac54a39058041af09b1be3d58a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     public bool sentLoot = false;
     public bool lootSpawned = false;
     public string lootName;
+    public bool destroyTalk = false;
+    public bool destroyCust = false;
 
 
 
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         DayNum.text = "Day Num: " + dayNum;
         DayNum.enabled = true;
+        destroyTalk = false;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
