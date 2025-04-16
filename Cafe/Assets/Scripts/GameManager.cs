@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     public bool destroyCust = false;
     public int lootedMoney;
     public string oldString;
+    public bool doorClose = true;
+    
 
 
 
@@ -39,7 +41,7 @@ public class GameManager : MonoBehaviour
     {
                 nightend = GameObject.Find("NightEnd").GetComponent<NightEnd>();
 
-
+        doorClose = true;
         if (Instance != null)
         {
             Destroy(gameObject);

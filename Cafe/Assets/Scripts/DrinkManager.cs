@@ -69,6 +69,7 @@ public class DrinkManager : MonoBehaviour
         gameManager.canEnter = false;
         gameManager.canTalk = true;
         gameManager.isTalking = false;
+        
     }
 
     public void setOrder()

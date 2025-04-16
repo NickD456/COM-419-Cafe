@@ -41,12 +41,14 @@ public class KeyCheck : MonoBehaviour
                     gameManager.canEnter = true;
                     gameManager.destroyCust = true;
                     gameManager.isTalking = false;
+                    gameManager.doorClose = false;
                 }
                 if(tag == "recruit")
                 {
                     gameManager.isRecruit = true;
                     gameManager.destroyCust = true;
                     gameManager.isTalking = false;
+                    gameManager.doorClose = false;
                 }
                 if(tag == "send_out")
                 {

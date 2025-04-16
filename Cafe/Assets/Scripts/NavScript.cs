@@ -74,14 +74,17 @@ public class NavScript : MonoBehaviour
             drinkManager.Reset();
             customerSpawner.RemoveNPCFromList(this.gameObject);
             Destroy(this.gameObject);
+            gameManager.doorClose = true;
             
+
         }
         if (other.gameObject.tag == "Recruit Spot")
         {
             drinkManager.Reset();
+            gameManager.doorClose = true;
             
-            
-           
+
+
             customerSpawner.RemoveNPCFromList(this.gameObject);
           
 
