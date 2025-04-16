@@ -26,6 +26,7 @@ public class CustomerSpawner : MonoBehaviour
     public List <GameObject> recruitTextPrefabs;
     public List<GameObject> recruitNPC = new List<GameObject>();
     public List<GameObject> customerNPC = new List<GameObject>();
+    public List<GameObject> infectNPC = new List<GameObject>();
 
     private int numRecNPCs = 0;
     private int maxRec = 0;
@@ -77,8 +78,10 @@ public class CustomerSpawner : MonoBehaviour
         if (totalSpawned < maxCustomers)
         {
             GameObject newNPC = null;
-            //int randomCustOrNPC = Random.Range(0, 8); 
-            int randomCustOrNPC = 7;
+          int randomCustOrNPC = Random.Range(0, 8);
+            //int randomInfect = Random.Range(0, 10);
+            int randomInfect = 0;
+
 
 
 
@@ -93,7 +96,16 @@ public class CustomerSpawner : MonoBehaviour
                 case 4:
                 case 5:
                 case 6:
-                    newNPC = Instantiate(customerNPC[randomCustOrNPC], spawnPoint.position, Quaternion.identity);
+                    if (randomInfect == 0)
+                    {
+                        newNPC = Instantiate(infectNPC[randomCustOrNPC], spawnPoint.position, Quaternion.identity);
+
+                    }
+                    else
+                    {
+
+                        newNPC = Instantiate(customerNPC[randomCustOrNPC], spawnPoint.position, Quaternion.identity);
+                    }
                     break;
                     
 
@@ -126,7 +138,7 @@ public class CustomerSpawner : MonoBehaviour
 
             if (newNPC.tag == "Customer")
             {
-                gameManager.KeyName = "enter";
+               
                 switch (randomOrder)
                 {
                     case 0:
@@ -146,6 +158,37 @@ public class CustomerSpawner : MonoBehaviour
                         newChild.transform.localPosition = Vector3.zero;
                         newChild.transform.localRotation = Quaternion.identity;
                         newChild.transform.localScale = Vector3.one;
+                        break;
+
+                }
+            }
+
+            if (newNPC.tag == "Infected")
+                gameManager.KeyName = "enter";
+            {
+                if (randomCustOrNPC == 0 || randomCustOrNPC == 4 || randomCustOrNPC == 5)
+                {
+                    randomCustomerText = 0;
+                }
+                else if (randomCustOrNPC == 1 || randomCustOrNPC == 2 || randomCustOrNPC == 3 || randomCustOrNPC == 6)
+                {
+                    randomCustomerText = 1;
+                }
+
+                switch (randomCustomerText)
+                {
+                    case 0:
+                        GameObject newChild = Instantiate(customerTextPrefabs[1], newNPC.transform);
+                        newChild.transform.localPosition = Vector3.zero;
+                        newChild.transform.localRotation = Quaternion.identity;
+                        newChild.transform.localScale = Vector3.one;
+                        break;
+
+                    case 1:
+                        GameObject newChild2 = Instantiate(customerTextPrefabs[2], newNPC.transform);
+                        newChild2.transform.localPosition = Vector3.zero;
+                        newChild2.transform.localRotation = Quaternion.identity;
+                        newChild2.transform.localScale = Vector3.one;
                         break;
 
                 }

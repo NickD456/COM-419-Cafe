@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public string oldString;
     public bool doorClose = true;
     public bool firstDay = true;
+    public bool letInfectIn = false;
 
 
 

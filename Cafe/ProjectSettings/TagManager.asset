@@ -24,6 +24,7 @@ TagManager:
   - Recruit NPC3
   - Recruit NPC2
   - Recruit NPC4
+  - Infected
   layers:
   - Default
   - TransparentFX

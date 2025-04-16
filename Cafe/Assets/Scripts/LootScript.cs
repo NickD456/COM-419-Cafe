@@ -33,7 +33,7 @@ public class LootScript : MonoBehaviour
 
         if(gameManager.sentLoot)
         { 
-            deathChance = Random.Range(1, 10);
+            deathChance = Random.Range(1, 20);
             if (deathChance == 1)
             {
                 gameManager.OnDeath();
