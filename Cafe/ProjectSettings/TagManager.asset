@@ -21,6 +21,9 @@ TagManager:
   - Recruit Spot
   - playertarget
   - Recruit NPC1
+  - Recruit NPC3
+  - Recruit NPC2
+  - Recruit NPC4
   layers:
   - Default
   - TransparentFX

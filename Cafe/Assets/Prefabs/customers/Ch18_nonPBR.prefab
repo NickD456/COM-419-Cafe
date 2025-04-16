@@ -224,6 +224,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aedbf50c0d0c65640a9d6179f954361d, type: 3}
+      propertyPath: m_TagString
+      value: Recruit NPC3
+      objectReference: {fileID: 0}
     - target: {fileID: 1082271958561512970, guid: aedbf50c0d0c65640a9d6179f954361d, type: 3}
       propertyPath: m_Layer
       value: 8

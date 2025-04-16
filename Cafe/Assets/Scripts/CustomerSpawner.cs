@@ -77,73 +77,50 @@ public class CustomerSpawner : MonoBehaviour
         if (totalSpawned < maxCustomers)
         {
             GameObject newNPC = null;
-            int randomCustOrNPC = Random.Range(0, 8); 
-       
+            //int randomCustOrNPC = Random.Range(0, 8); 
+            int randomCustOrNPC = 7;
+
+
 
 
 
             switch (randomCustOrNPC)
             {
                 case 0:
-                    newNPC = Instantiate(customerNPC[0], spawnPoint.position, Quaternion.identity);
-                    break;
-
                 case 1:
-                    newNPC = Instantiate(customerNPC[1], spawnPoint.position, Quaternion.identity);
-                    break;
-
                 case 2:
-                   
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                    newNPC = Instantiate(customerNPC[randomCustOrNPC], spawnPoint.position, Quaternion.identity);
+                    break;
+                    
+
+                case 7:
                     Debug.Log(numRecNPCs);
                     Debug.Log(maxRec);
-                    if (numRecNPCs <= maxRec)
-                    {
-                        int randomRecNPC = 0;
-                        switch (randomRecNPC)
-                        {
-                            case 0:
-                                newNPC = Instantiate(recruitNPC[0], spawnPoint.position, Quaternion.identity);
-                                Debug.Log("Recruited NPC Spawned");
-                                break;
-                        }
 
-                      
-                        Debug.Log("NPC Spawned");
-                        break;
-                        
+                    if (numRecNPCs <= maxRec && recruitNPC.Count > 0)
+                    {
+                        int randomRecNPC = Random.Range(0, recruitNPC.Count);
+                        GameObject recruitToSpawn = recruitNPC[randomRecNPC];
+
+                        if (recruitToSpawn != null)
+                        {
+                            newNPC = Instantiate(recruitToSpawn, spawnPoint.position, Quaternion.identity);
+                            Debug.Log("Recruited NPC Spawned");
+                            recruitNPC.RemoveAt(randomRecNPC);
+                        }
                     }
                     else
                     {
-                        Debug.Log("NPC not Spawned");
-                        goto case 3;
+                        Debug.Log("Recruit NPC not spawned - max reached or list empty.");
                     }
-
-                case 3:
-                    newNPC = Instantiate(customerNPC[2], spawnPoint.position, Quaternion.identity);
                     break;
-
-                case 4:
-                    newNPC = Instantiate(customerNPC[3], spawnPoint.position, Quaternion.identity);
-                    break;
-
-                case 5:
-                    newNPC = Instantiate(customerNPC[4], spawnPoint.position, Quaternion.identity);
-                    break;
-
-
-                    case 6:
-                    newNPC = Instantiate(customerNPC[5], spawnPoint.position, Quaternion.identity);
-                    break;
-
-                case 7:
-                    newNPC = Instantiate(customerNPC[6], spawnPoint.position, Quaternion.identity);
-                    break;
-
-
-
             }
 
-            
+
             int randomOrder = Random.Range(0, 2);
             int randomCustomerText = 0;
 

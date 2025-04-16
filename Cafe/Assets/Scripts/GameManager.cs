@@ -30,7 +30,8 @@ public class GameManager : MonoBehaviour
     public int lootedMoney;
     public string oldString;
     public bool doorClose = true;
-    
+    public bool firstDay = true;
+
 
 
 

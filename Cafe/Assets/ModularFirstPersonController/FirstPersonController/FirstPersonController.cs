@@ -208,7 +208,7 @@ public class FirstPersonController : MonoBehaviour
     private void Update()
     {
 
-        if(gameManager.isTalking || gameManager.isPaused)
+        if(gameManager.isTalking || gameManager.isPaused || gameManager.firstDay)
         {
             
             if (gameManager.isTalking)
@@ -228,6 +228,13 @@ public class FirstPersonController : MonoBehaviour
             if (gameManager.isPaused)
             {
                 
+                UnlockMouse();
+                cameraCanMove = false;
+                playerCanMove = false;
+            }
+
+            if (gameManager.firstDay)
+            {
                 UnlockMouse();
                 cameraCanMove = false;
                 playerCanMove = false;

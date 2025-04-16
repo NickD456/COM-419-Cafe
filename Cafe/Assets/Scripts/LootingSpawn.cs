@@ -56,29 +56,31 @@ public class LootingSpawn : MonoBehaviour
         if (gameManager.recruitedNPC[1] != null)
         {
             Quaternion rotation = Quaternion.Euler(0, 90, 0);
-            GameObject newNPC = Instantiate(gameManager.recruitedNPC[1], spot2.transform.position, Quaternion.identity);
+            GameObject newNPC = Instantiate(gameManager.recruitedNPC[1], spot2.transform.position, rotation);
             Destroy(newNPC.GetComponent<NavMeshAgent>());
             Destroy(newNPC.GetComponent<Rigidbody>());
             newNPC.AddComponent<AnimeSet1>();
-            spot2Talk.SetActive(true);
+            
         }
         if (gameManager.recruitedNPC[2] != null)
         {
+            Debug.Log("Spot 3: ");
             Quaternion rotation = Quaternion.Euler(0, 90, 0);
-            GameObject newNPC = Instantiate(gameManager.recruitedNPC[2], spot3.transform.position, Quaternion.identity);
+            GameObject newNPC = Instantiate(gameManager.recruitedNPC[2], spot3.transform.position, rotation);
             Destroy(newNPC.GetComponent<NavMeshAgent>());
             Destroy(newNPC.GetComponent<Rigidbody>());
             newNPC.AddComponent<AnimeSet1>();
-            spot3Talk.SetActive(true);
+           
         }
         if (gameManager.recruitedNPC[3] != null)
         {
-            Quaternion rotation = Quaternion.Euler(0, 90, 0);
-            GameObject newNPC = Instantiate(gameManager.recruitedNPC[3], spot4.transform.position, Quaternion.identity);
+            Debug.Log("Spot 4: ");
+            Quaternion rotation = Quaternion.Euler(0, -90, 0);
+            GameObject newNPC = Instantiate(gameManager.recruitedNPC[3], spot4.transform.position, rotation);
             Destroy(newNPC.GetComponent<NavMeshAgent>());
             Destroy(newNPC.GetComponent<Rigidbody>());
             newNPC.AddComponent<AnimeSet1>();
-            spot4Talk.SetActive(true);
+           
         }
     }
 }
