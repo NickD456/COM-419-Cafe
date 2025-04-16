@@ -27,7 +27,8 @@ public class GameManager : MonoBehaviour
     public string lootName;
     public bool destroyTalk = false;
     public bool destroyCust = false;
-
+    public int lootedMoney;
+    public string oldString;
 
 
 
@@ -48,7 +49,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         DayNum.text = "Day Num: " + dayNum;
         DayNum.enabled = true;
-        destroyTalk = false;
+        destroyCust = false;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -122,5 +123,10 @@ public class GameManager : MonoBehaviour
     public void SubMoney(int moneyNum)
     {
         money = money - moneyNum;
+    }
+
+    public void OnDeath()
+    {
+        recruitedNPC.RemoveAt(0);
     }
 }

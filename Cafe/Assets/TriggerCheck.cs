@@ -21,7 +21,7 @@ public class TriggerCheck : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player Entered Trigger");
-            oldString = gameManager.KeyName;
+            gameManager.oldString = gameManager.KeyName;
             gameManager.KeyName = "send_out";
             Debug.Log("Key Name: " + gameManager.KeyName);
         }
@@ -31,9 +31,7 @@ public class TriggerCheck : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player exit Trigger");
-            gameManager.KeyName = oldString;
-            Debug.Log("Key Name: " + gameManager.KeyName);
+            gameManager.KeyName = gameManager.oldString;
         }
     }
 }

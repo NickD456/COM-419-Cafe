@@ -23,7 +23,7 @@ public class RecruitScript : MonoBehaviour
     {
         GameObject root = other.transform.root.gameObject;
 
-        if (root.CompareTag("Recruit NPC1"))
+        if (root.CompareTag("Recruit NPC1") && !gameManager.recruitedNPC.Contains(recruitNPC1))
         {
 
             Debug.Log("Recruit NPC1");

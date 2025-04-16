@@ -34,7 +34,7 @@ public class NavScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.stoppingDistance = 0.4f;
+        agent.stoppingDistance = 1.5f;
 
         if (drinkManager.orderComp == true || gameManager.turnBack == true)
         {
@@ -55,7 +55,7 @@ public class NavScript : MonoBehaviour
         }
         
 
-        if(agent.remainingDistance <= 0.4f)
+        if(agent.remainingDistance <= 1.5f)
         {
             anim1.SetBool("Walk", false);
         }

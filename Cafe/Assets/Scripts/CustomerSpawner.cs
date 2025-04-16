@@ -77,7 +77,7 @@ public class CustomerSpawner : MonoBehaviour
         if (totalSpawned < maxCustomers)
         {
             GameObject newNPC = null;
-            int randomCustOrNPC = 2;
+            int randomCustOrNPC = Random.Range(0, 5); 
        
 
 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4338182412774541923}
   - component: {fileID: 777040906235631695}
   - component: {fileID: 5060605270932848152}
+  - component: {fileID: 8387392934530695479}
   m_Layer: 0
   m_Name: DialogueTrigger3D
   m_TagString: Untagged
@@ -78,3 +79,15 @@ MonoBehaviour:
   fileTypeUsed: 0
   inkJSON: {fileID: 4900000, guid: c0c1d87cc7c7c934190518b70c939108, type: 3}
   TXTFile: {fileID: 0}
+--- !u!114 &8387392934530695479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8737253841939166918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0e2f04115d62c40a031961c1bb5e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
