@@ -77,7 +77,7 @@ public class CustomerSpawner : MonoBehaviour
         if (totalSpawned < maxCustomers)
         {
             GameObject newNPC = null;
-            int randomCustOrNPC = Random.Range(0, 5); 
+            int randomCustOrNPC = Random.Range(0, 8); 
        
 
 
@@ -89,7 +89,7 @@ public class CustomerSpawner : MonoBehaviour
                     break;
 
                 case 1:
-                    newNPC = Instantiate(customerNPC[0], spawnPoint.position, Quaternion.identity);
+                    newNPC = Instantiate(customerNPC[1], spawnPoint.position, Quaternion.identity);
                     break;
 
                 case 2:
@@ -119,12 +119,27 @@ public class CustomerSpawner : MonoBehaviour
                     }
 
                 case 3:
-                    newNPC = Instantiate(customerNPC[1], spawnPoint.position, Quaternion.identity);
+                    newNPC = Instantiate(customerNPC[2], spawnPoint.position, Quaternion.identity);
                     break;
 
                 case 4:
-                    newNPC = Instantiate(customerNPC[1], spawnPoint.position, Quaternion.identity);
+                    newNPC = Instantiate(customerNPC[3], spawnPoint.position, Quaternion.identity);
                     break;
+
+                case 5:
+                    newNPC = Instantiate(customerNPC[4], spawnPoint.position, Quaternion.identity);
+                    break;
+
+
+                    case 6:
+                    newNPC = Instantiate(customerNPC[5], spawnPoint.position, Quaternion.identity);
+                    break;
+
+                case 7:
+                    newNPC = Instantiate(customerNPC[6], spawnPoint.position, Quaternion.identity);
+                    break;
+
+
 
             }
 
