@@ -55,4 +55,12 @@ public class SoundSettings : MonoBehaviour
         volumeSlider.gameObject.SetActive(false);
         nonSet.SetActive(true);
     }
+
+    public void OpenURL ()
+    {
+
+        string url = "https://docs.google.com/document/d/1K7vVlaZ-vWSKlhqIZSMtSF8r2osoKnLrCvUtEiGfJmU/edit?usp=sharing";
+        Debug.Log("Trying to open URL: " + url);
+        Application.OpenURL(url);
+    }
 }
