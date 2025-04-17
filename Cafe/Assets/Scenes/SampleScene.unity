@@ -4803,7 +4803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f87b6a362f25cad4285a95272874b113, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.37
+      value: -14.333
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f87b6a362f25cad4285a95272874b113, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4847,7 +4847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f87b6a362f25cad4285a95272874b113, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f87b6a362f25cad4285a95272874b113, type: 3}
       propertyPath: m_TagString
@@ -9238,6 +9238,8 @@ MonoBehaviour:
   bookText: {fileID: 0}
   bookBrownSugar: {fileID: 0}
   bookMatcha: {fileID: 0}
+  bookRad: {fileID: 0}
+  bookHoney: {fileID: 0}
   milksound: {fileID: 0}
   machasound: {fileID: 0}
   booksound: {fileID: 0}
@@ -12017,15 +12019,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f87b6a362f25cad4285a95272874b113, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.301
+      value: -14.298
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f87b6a362f25cad4285a95272874b113, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.272
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f87b6a362f25cad4285a95272874b113, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 84.688
+      value: 87.084
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f87b6a362f25cad4285a95272874b113, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13280,11 +13282,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f87b6a362f25cad4285a95272874b113, type: 3}
       propertyPath: m_Name
-      value: bookApoc (1)
+      value: bookHoney
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f87b6a362f25cad4285a95272874b113, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f87b6a362f25cad4285a95272874b113, type: 3}
       propertyPath: m_TagString
@@ -14741,6 +14743,8 @@ MonoBehaviour:
   bookText: {fileID: 823486240}
   bookBrownSugar: {fileID: 1827732693}
   bookMatcha: {fileID: 1222997769}
+  bookRad: {fileID: 1577157991}
+  bookHoney: {fileID: 1851446212}
   milksound: {fileID: 8300000, guid: 58d159673c8633243a4eb0be004582bc, type: 3}
   machasound: {fileID: 8300000, guid: b3e1208884edbb84ba40186c31f227c1, type: 3}
   booksound: {fileID: 8300000, guid: 489c6d913228fb7458ffe58cc66bdac2, type: 3}
