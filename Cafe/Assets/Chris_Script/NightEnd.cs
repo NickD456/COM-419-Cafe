@@ -21,7 +21,7 @@ private Weppon weppon;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        zombieSpawn = GameObject.Find("Zombie Spawn").GetComponent<ZombieSpawn>();
+        //zombieSpawn = GameObject.Find("Zombie Spawn").GetComponent<ZombieSpawn>();
 
         // weppon.audioSource = GetComponent<AudioSource>();
 

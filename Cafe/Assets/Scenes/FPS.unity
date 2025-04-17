@@ -84414,12 +84414,16 @@ MonoBehaviour:
   brownSugarText: {fileID: 0}
   milkText: {fileID: 0}
   matchaText: {fileID: 0}
+  radText: {fileID: 0}
   lidText: {fileID: 0}
   teaText: {fileID: 0}
   GiveText: {fileID: 0}
   bookText: {fileID: 0}
   bookBrownSugar: {fileID: 0}
   bookMatcha: {fileID: 0}
+  milksound: {fileID: 0}
+  machasound: {fileID: 0}
+  booksound: {fileID: 0}
 --- !u!1001 &1534688851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99855,6 +99859,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1602055408331002092, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3456232696248572309, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
+      propertyPath: DayNum
+      value: 
+      objectReference: {fileID: 1112679715}
     - target: {fileID: 3456232696248572309, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
       propertyPath: recruitedNPC.Array.size
       value: 0
@@ -99907,13 +99919,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8321078318860756847, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8321078318860756847, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
+    - {fileID: 1602055408331002092, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
+    - {fileID: 3456232696248572309, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7531929448491432393, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1909536944}
+      addedObject: {fileID: 1887952241}
   m_SourcePrefab: {fileID: 100100000, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
 --- !u!1 &1800871812
 GameObject:
@@ -101520,7 +101539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SerializedVersion: 0
-  m_AgentTypeID: 0
+  m_AgentTypeID: -1372625422
   m_CollectObjects: 0
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
@@ -105180,6 +105199,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880995878}
   m_Mesh: {fileID: -5321260103611251441, guid: 8f631a0560592c44890f879375e84e52, type: 3}
+--- !u!1 &1887952238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7531929448491432393, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
+  m_PrefabInstance: {fileID: 1800183407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1887952241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887952238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1deb93ea0883f03419f92df0913fc9f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
+  npcArray: []
+  recruitedNPC: []
+  dayNum: 1
+  DayNum: {fileID: 0}
+  isTalking: 0
+  canEnter: 0
+  canTalk: 1
+  turnBack: 0
+  isRecruit: 0
+  maxRecruited: 13
+  KeyName: 
+  isPaused: 0
+  sentLoot: 0
+  lootSpawned: 0
+  lootName: 
+  destroyTalk: 0
+  destroyCust: 0
+  lootedMoney: 0
+  oldString: 
+  doorClose: 1
+  firstDay: 1
+  letInfectIn: 0
 --- !u!1001 &1888452332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106522,23 +106581,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906694002}
   m_Mesh: {fileID: -2772807252668000162, guid: 8f631a0560592c44890f879375e84e52, type: 3}
---- !u!1 &1909536943 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7531929448491432393, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
-  m_PrefabInstance: {fileID: 1800183407}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1909536944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1909536943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c88c589dea61af8409f5d66f9477c5d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1909804584
 GameObject:
   m_ObjectHideFlags: 0
@@ -121896,7 +121938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2473374933384132945, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.6
+      value: -5.64
       objectReference: {fileID: 0}
     - target: {fileID: 2473374933384132945, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
       propertyPath: m_LocalPosition.y
@@ -121904,7 +121946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2473374933384132945, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 39.7
+      value: 42.53
       objectReference: {fileID: 0}
     - target: {fileID: 2473374933384132945, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
       propertyPath: m_LocalRotation.w
@@ -121989,6 +122031,10 @@ PrefabInstance:
     - target: {fileID: 6724323035553317919, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
       propertyPath: m_AngularDrag
       value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 6724323035553317919, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 6724323035553317919, guid: 76b25e9798371a34a9972760cf22f908, type: 3}
       propertyPath: m_Interpolate
