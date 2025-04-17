@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
 
 
+
     public static GameManager Instance;
     //Tells unity to not destroy the game manager object
     private void Awake()
@@ -68,7 +69,9 @@ public class GameManager : MonoBehaviour
         {
             DayNum.enabled = false;
         }
-        
+
+       
+
     }
 
     //Add NPC when recruited. NPC type and name will be handled through tags. 

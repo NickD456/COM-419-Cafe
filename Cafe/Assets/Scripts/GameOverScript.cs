@@ -22,7 +22,7 @@ public class GameOverScript : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(0);
         Destroy(gameManager.gameObject);
     }
 

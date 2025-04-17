@@ -24,6 +24,7 @@ public class Pickup : MonoBehaviour
     public GameObject brownSugarText;
     public GameObject milkText;
     public GameObject matchaText;
+    public GameObject radText;
     public GameObject lidText;
     public GameObject teaText;
     public GameObject GiveText;
@@ -31,6 +32,12 @@ public class Pickup : MonoBehaviour
     public GameObject bookBrownSugar;
     public GameObject bookMatcha;
 
+    public AudioClip milksound;
+    AudioSource milks;
+    public AudioClip machasound;
+    AudioSource matchas;
+    public AudioClip booksound;
+    AudioSource books;
 
     private Vector3 originalItem;
 
@@ -46,6 +53,11 @@ public class Pickup : MonoBehaviour
         isBook = false;
         drinkManager = GameObject.Find("DrinkManager").GetComponent<DrinkManager>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        milks = gameObject.AddComponent<AudioSource>();
+        matchas = gameObject.AddComponent<AudioSource>();
+        books = gameObject.AddComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -175,6 +187,20 @@ public class Pickup : MonoBehaviour
             }
             
         }
+        if (hasItem && heldItem.name == "Cup(Clone)" && interactableObject.name == "RadJar")
+        {
+            if (drinkManager.hasRad == false)
+            {
+                GetRad();
+            }
+            else
+            {
+                radText.SetActive(true);
+                Invoke("HideRadText", 2f);
+                interactText.SetActive(false);
+            }
+
+        }
         if (hasItem && heldItem.name == "Cup(Clone)" && interactableObject.name == "Cup Lid")
         {
             if (drinkManager.hasLid == false)
@@ -264,7 +290,8 @@ public class Pickup : MonoBehaviour
         Debug.Log(drinkManager.hasTea);
 
         canInteract = false;
-        
+        milks.PlayOneShot(milksound);
+
     }
 
     private void GetBrownSugar()
@@ -279,11 +306,19 @@ public class Pickup : MonoBehaviour
         Transform child = heldItem.transform.Find("Milk liq");
         child.gameObject.SetActive(true);
         Debug.Log(drinkManager.hasMilk);
+        
     }
     private void GetMatcha()
     {
         drinkManager.SetMatcha();
         Debug.Log(drinkManager.hasMatcha);
+        matchas.clip = machasound;
+        matchas.Play();
+    }
+    private void GetRad()
+    {
+        drinkManager.SetRad();
+        Debug.Log(drinkManager.hasRad);
     }
     private void GetLid()
     {
@@ -314,6 +349,10 @@ public class Pickup : MonoBehaviour
     {
         matchaText.SetActive(false);
     }
+    void HideRadText()
+    {
+        radText.SetActive(false);
+    }
 
     void GiveDrink()
     {
@@ -342,5 +381,7 @@ public class Pickup : MonoBehaviour
             bookBrownSugar.SetActive(true);
             Debug.Log("sugar");
         }
+        books.clip = booksound;
+        books.Play();
     }
 }

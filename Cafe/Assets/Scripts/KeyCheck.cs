@@ -32,13 +32,22 @@ public class KeyCheck : MonoBehaviour
 
         if (character.LookForCharacterTag(tag, out string value))
         {
-          
+            Debug.Log("Key: " + tag + " Value: " + value);
+
 
             if (value == "yes")
             {
+
                 if (tag == "enter")
                 {
                     gameManager.canEnter = true;
+                    gameManager.destroyCust = true;
+                    gameManager.isTalking = false;
+                    gameManager.doorClose = false;
+                }
+                if(tag == "enterinfect")
+                {
+                    gameManager.letInfectIn = true;
                     gameManager.destroyCust = true;
                     gameManager.isTalking = false;
                     gameManager.doorClose = false;

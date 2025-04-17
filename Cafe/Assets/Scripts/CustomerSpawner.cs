@@ -79,8 +79,8 @@ public class CustomerSpawner : MonoBehaviour
         {
             GameObject newNPC = null;
           int randomCustOrNPC = Random.Range(0, 8);
-            //int randomInfect = Random.Range(0, 10);
-            int randomInfect = 0;
+            int randomInfect = Random.Range(0, 10);
+           
 
 
 
@@ -133,12 +133,13 @@ public class CustomerSpawner : MonoBehaviour
             }
 
 
-            int randomOrder = Random.Range(0, 2);
+            //int randomOrder = Random.Range(0, 3);
+            int randomOrder = 2;
             int randomCustomerText = 0;
 
             if (newNPC.tag == "Customer")
             {
-               
+               gameManager.KeyName = "enter";
                 switch (randomOrder)
                 {
                     case 0:
@@ -147,6 +148,10 @@ public class CustomerSpawner : MonoBehaviour
 
                     case 1:
                         newNPC.AddComponent<BrownSugarOrder>();
+                        break;
+                    case 2:
+                        Debug.Log("Rad Order");
+                        newNPC.AddComponent<RadOrder>();
                         break;
                 }
 
@@ -164,8 +169,9 @@ public class CustomerSpawner : MonoBehaviour
             }
 
             if (newNPC.tag == "Infected")
-                gameManager.KeyName = "enter";
+                
             {
+                gameManager.KeyName = "enterinfect";
                 if (randomCustOrNPC == 0 || randomCustOrNPC == 4 || randomCustOrNPC == 5)
                 {
                     randomCustomerText = 0;

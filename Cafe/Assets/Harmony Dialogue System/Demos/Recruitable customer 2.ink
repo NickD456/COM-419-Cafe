@@ -33,12 +33,12 @@ Where do you want to examine?#speaker:player
 + [Let them in anyway] #speaker:player  
     You step aside.#speaker:player  
     If you turn, you're out.#speaker:player  
-    Thank you. Seriously.#speaker:Customer #enter:yes  
+    Thank you. Seriously.#speaker:Customer #enterinfect:yes  
     -> END  
     
     + [I cant take that risk] #speaker:player  
     I’m sorry. Can’t take the risk.#speaker:player  
-    ...Your making a mistake.#speaker:Customer #enter:no  
+    ...Your making a mistake.#speaker:Customer #enterinfect:no  
     -> END
    
    
@@ -48,12 +48,12 @@ They could be hiding it.#speaker:player
 + [I'll let them in ] -> LetIn
 + [Let's play it safe ] #speaker:player
     I dont trust you. Leave#speaker:player 
-    How... How could you?#speaker:Customer #enter:no
+    How... How could you?#speaker:Customer #enterinfect:no
     -> END
     
 === LetIn ===
 You may come in#speaker:player 
-Thank You!#speaker:Customer #enter:yes
+Thank You!#speaker:Customer #enterinfect:yes
 -> END
 
 
