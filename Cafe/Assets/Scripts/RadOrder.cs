@@ -35,10 +35,13 @@ public class RadOrder : MonoBehaviour
     {
         if (other.gameObject.tag == "Line Spot")
         {
-            radChild = transform.Find("Matcha Order Text");
+            radChild = transform.Find("Rad Order Text");
+            Debug.Log(radChild);
             if (radChild != null && !ordered)
             {
+
                 radChild.gameObject.SetActive(true);
+               
                 ordered = true;
             }
         }
