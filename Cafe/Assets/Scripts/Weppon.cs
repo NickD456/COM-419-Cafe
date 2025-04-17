@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 
 public class Weppon : MonoBehaviour
@@ -8,6 +9,10 @@ public class Weppon : MonoBehaviour
     public Transform bulletSpawn;
     public float bulletVelocity = 30;
     public float bulletPrefabTime = 3f;
+    public int currentClip = 5;
+    public int maxClip = 5;
+    public TMPro.TMP_Text clipText;
+
 
     public AudioClip gunshotSound; 
     public AudioSource audioSource;
@@ -19,8 +24,21 @@ public class Weppon : MonoBehaviour
 
      if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            FireWeapon();
+            if (currentClip > 0)
+            {
+                FireWeapon();
+            }
+           
             //FPlayAudioGun();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if (currentClip <= 0)
+            {
+                Reload();
+            }
+          
         }
     }
 
@@ -28,6 +46,8 @@ public class Weppon : MonoBehaviour
     {
         audioSource.PlayOneShot(gunshotSound);
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
+        currentClip--;
+        clipText.text = "Ammo : " + currentClip.ToString();
 
         bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward.normalized * bulletVelocity, ForceMode.Impulse);
         //destroy bullet
@@ -36,6 +56,11 @@ public class Weppon : MonoBehaviour
 
         StartCoroutine(DestroyBulletAfterTime(bullet,bulletPrefabTime));
     
+    }
+
+    public void Reload()
+    {
+        currentClip = maxClip;
     }
 
 
