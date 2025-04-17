@@ -32,6 +32,8 @@ public class Pickup : MonoBehaviour
     public GameObject bookText;
     public GameObject bookBrownSugar;
     public GameObject bookMatcha;
+    public GameObject bookRad;
+    public GameObject bookHoney;
 
     public AudioClip milksound;
     AudioSource milks;
@@ -402,10 +404,23 @@ public class Pickup : MonoBehaviour
         else if (bookMatcha.activeSelf)
         {
             bookMatcha.SetActive(false);
-            bookBrownSugar.SetActive(true);
+            bookHoney.SetActive(true);
             Debug.Log("sugar");
         }
-        books.clip = booksound;
+        else if (bookRad.activeSelf)
+        {
+            bookRad.SetActive(false);
+            bookBrownSugar.SetActive(true);
+            Debug.Log("honey");
+        }
+        else if (bookHoney.activeSelf)
+        {
+            bookHoney.SetActive(false);
+            bookRad.SetActive(true);
+            Debug.Log("rad");
+        }
+        
+            books.clip = booksound;
         books.Play();
     }
 }

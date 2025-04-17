@@ -133,8 +133,8 @@ public class CustomerSpawner : MonoBehaviour
             }
 
 
-            //int randomOrder = Random.Range(0, 3);
-            int randomOrder = 3;
+            int randomOrder = Random.Range(0, 4);
+           
             int randomCustomerText = 0;
 
             if (newNPC.tag == "Customer")
