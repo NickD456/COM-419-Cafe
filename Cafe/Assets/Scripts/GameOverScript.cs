@@ -25,6 +25,11 @@ public class GameOverScript : MonoBehaviour
         SceneManager.LoadScene(0);
         Destroy(gameManager.gameObject);
     }
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(2);
+        Destroy(gameManager.gameObject);
+    }
 
     public void QuitGame()
     {

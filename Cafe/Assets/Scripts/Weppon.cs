@@ -17,6 +17,12 @@ public class Weppon : MonoBehaviour
     public AudioClip gunshotSound; 
     public AudioSource audioSource;
 
+
+    private void Awake()
+    {
+        currentClip = 5;
+        clipText.text = "Ammo : " + currentClip.ToString();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -26,6 +32,7 @@ public class Weppon : MonoBehaviour
         {
             if (currentClip > 0)
             {
+               
                 FireWeapon();
             }
            
@@ -44,10 +51,12 @@ public class Weppon : MonoBehaviour
 
     private void FireWeapon()
     {
+
         audioSource.PlayOneShot(gunshotSound);
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
         currentClip--;
         clipText.text = "Ammo : " + currentClip.ToString();
+
 
         bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward.normalized * bulletVelocity, ForceMode.Impulse);
         //destroy bullet
@@ -61,6 +70,7 @@ public class Weppon : MonoBehaviour
     public void Reload()
     {
         currentClip = maxClip;
+        clipText.text = "Ammo : " + currentClip.ToString();
     }
 
 
