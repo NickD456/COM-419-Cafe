@@ -134,7 +134,7 @@ public class CustomerSpawner : MonoBehaviour
 
 
             //int randomOrder = Random.Range(0, 3);
-            int randomOrder = 2;
+            int randomOrder = 3;
             int randomCustomerText = 0;
 
             if (newNPC.tag == "Customer")
@@ -152,6 +152,9 @@ public class CustomerSpawner : MonoBehaviour
                     case 2:
                         Debug.Log("Rad Order");
                         newNPC.AddComponent<RadOrder>();
+                        break;
+                    case 3:
+                        newNPC.AddComponent<HoneyOrder>();
                         break;
                 }
 
@@ -196,6 +199,7 @@ public class CustomerSpawner : MonoBehaviour
                         newChild2.transform.localRotation = Quaternion.identity;
                         newChild2.transform.localScale = Vector3.one;
                         break;
+
 
                 }
             }

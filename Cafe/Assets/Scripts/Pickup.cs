@@ -25,6 +25,7 @@ public class Pickup : MonoBehaviour
     public GameObject milkText;
     public GameObject matchaText;
     public GameObject radText;
+    public GameObject honeyText;
     public GameObject lidText;
     public GameObject teaText;
     public GameObject GiveText;
@@ -201,6 +202,20 @@ public class Pickup : MonoBehaviour
             }
 
         }
+        if (hasItem && heldItem.name == "Cup(Clone)" && interactableObject.name == "Honey Jar")
+        {
+            if (drinkManager.hasHoney == false)
+            {
+                GetHoney();
+            }
+            else
+            {
+                honeyText.SetActive(true);
+                Invoke("HideHoneyText", 2f);
+                interactText.SetActive(false);
+            }
+
+        }
         if (hasItem && heldItem.name == "Cup(Clone)" && interactableObject.name == "Cup Lid")
         {
             if (drinkManager.hasLid == false)
@@ -320,6 +335,11 @@ public class Pickup : MonoBehaviour
         drinkManager.SetRad();
         Debug.Log(drinkManager.hasRad);
     }
+    private void GetHoney()
+    {
+        drinkManager.SetHoney();
+        Debug.Log(drinkManager.hasHoney);
+    }
     private void GetLid()
     {
         drinkManager.SetLid();
@@ -352,6 +372,10 @@ public class Pickup : MonoBehaviour
     void HideRadText()
     {
         radText.SetActive(false);
+    }
+    void HideHoneyText()
+    {
+        honeyText.SetActive(false);
     }
 
     void GiveDrink()

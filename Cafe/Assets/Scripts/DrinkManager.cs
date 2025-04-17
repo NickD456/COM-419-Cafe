@@ -11,6 +11,7 @@ public class DrinkManager : MonoBehaviour
     public bool hasMilk;
     public bool hasLid;
     public bool hasRad;
+    public bool hasHoney;
     public bool orderComp;
     private GameManager gameManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,6 +24,7 @@ public class DrinkManager : MonoBehaviour
         hasTea = false;
         orderComp = false;
         hasRad = false;
+        hasHoney = false;
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
@@ -61,7 +63,11 @@ public class DrinkManager : MonoBehaviour
     public void SetRad()
     {
         hasRad = true;
-    }   
+    }
+    public void SetHoney()
+    {
+        hasHoney = true;
+    }
 
     public void Reset()
     {
@@ -71,6 +77,7 @@ public class DrinkManager : MonoBehaviour
         hasMilk= false;
         hasTea= false;
         hasRad = false;
+        hasHoney = false;
         orderComp = false;
         gameManager.turnBack = false;
         gameManager.isRecruit = false; 
