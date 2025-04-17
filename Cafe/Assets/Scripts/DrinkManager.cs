@@ -27,6 +27,20 @@ public class DrinkManager : MonoBehaviour
         hasHoney = false;
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        if (gameManager.dayNum > 1)
+        {
+            gameManager.money -= 10;
+        }
+        else if (gameManager.dayNum > 4)
+        {
+            gameManager.money -= 20;
+        }
+        else if (gameManager.dayNum > 10)
+        {
+            gameManager.money -= 30;
+        }
+
     }
 
     // Update is called once per frame
