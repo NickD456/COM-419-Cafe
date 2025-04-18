@@ -30,8 +30,10 @@ public class GameManager : MonoBehaviour
     public int lootedMoney;
     public string oldString;
     public bool doorClose = true;
-    public bool firstDay = true;
+    public bool firstDay = false;
     public bool letInfectIn = false;
+    public bool hasGun = false;
+    public bool shooting = false;
 
 
 
@@ -55,6 +57,7 @@ public class GameManager : MonoBehaviour
         DayNum.text = "Day Num: " + dayNum;
         DayNum.enabled = true;
         destroyCust = false;
+        firstDay = false;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3456232696248572309}
   - component: {fileID: 1602055408331002092}
   - component: {fileID: 8321078318860756847}
+  - component: {fileID: 8320157602101648179}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1deb93ea0883f03419f92df0913fc9f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  money: 0
   npcArray:
   - {fileID: 1197673615969690264, guid: c75a07a9e5521ce43a14dfc516059c03, type: 3}
   - {fileID: 871881344867652251, guid: 9f7f8d980343e284bb917e937ff34874, type: 3}
@@ -62,6 +64,17 @@ MonoBehaviour:
   isRecruit: 0
   maxRecruited: 13
   KeyName: 
+  isPaused: 0
+  sentLoot: 0
+  lootSpawned: 0
+  lootName: 
+  destroyTalk: 0
+  destroyCust: 0
+  lootedMoney: 0
+  oldString: 
+  doorClose: 1
+  firstDay: 1
+  letInfectIn: 0
 --- !u!114 &1602055408331002092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,5 +97,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1f35a4de9e8f5b4eac5b83fa1e5f7e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8320157602101648179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7531929448491432393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88c589dea61af8409f5d66f9477c5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

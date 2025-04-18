@@ -20,7 +20,7 @@ public class GameOverCheck : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
             
             Debug.Log("Game Over");
         }

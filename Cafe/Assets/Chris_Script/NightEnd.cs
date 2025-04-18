@@ -69,7 +69,9 @@ private Weppon weppon;
         }
         fadeImage.color = endColor;
         gameManager.dayNum += 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        gameManager.hasGun = false;
+        SceneManager.LoadScene(2);
+        
     }
 
 }

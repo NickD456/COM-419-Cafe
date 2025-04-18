@@ -219,7 +219,7 @@ public class FirstPersonController : MonoBehaviour
 
                 if (Input.GetKeyDown("i"))
                 {
-                    Debug.Log("talking");
+                   
                     UnlockMouse();
                     cameraCanMove = false;
                     playerCanMove = false;
@@ -227,7 +227,7 @@ public class FirstPersonController : MonoBehaviour
             }
             if (gameManager.isPaused)
             {
-                Debug.Log("Paused");
+                
                 UnlockMouse();
                 cameraCanMove = false;
                 playerCanMove = false;
@@ -236,14 +236,14 @@ public class FirstPersonController : MonoBehaviour
             if (gameManager.firstDay)
             {
 
-                Debug.Log("First Day");
+               
                 UnlockMouse();
                 cameraCanMove = false;
                 playerCanMove = false;
             }
             if (gameManager.letInfectIn)
             {
-               Debug.Log("Infect");
+               
                 cameraCanMove = false;
                 playerCanMove = false;
             }
@@ -252,7 +252,7 @@ public class FirstPersonController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not Talking");
+            
             if (talkText != null)
             {
                 talkText.SetActive(false);

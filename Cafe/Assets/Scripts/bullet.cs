@@ -6,10 +6,12 @@ public class bullet : MonoBehaviour
 {
 public NightEnd nightend;
 public int zombieCount;
+    public float lifetime = 0.5f;
 
     private void Start()
     {
         nightend = GameObject.Find("NightEnd").GetComponent<NightEnd>();
+        Destroy(gameObject, lifetime);
     }
     void OnCollisionEnter(Collision collision)
     {

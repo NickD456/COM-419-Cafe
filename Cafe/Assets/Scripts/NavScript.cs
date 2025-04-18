@@ -64,6 +64,16 @@ public class NavScript : MonoBehaviour
             
             anim1.SetBool("Walk", true);
         }
+
+
+        if (gameManager.shooting == true)
+        {
+            anim1.SetBool("Shooting", true);
+        }
+        else
+        {
+            anim1.SetBool("Shooting", false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

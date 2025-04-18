@@ -8917,23 +8917,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.020000001, y: 0.019999998, z: 0.019999994}
   m_Center: {x: -0.079601355, y: -0.000000014901161, z: 9.313226e-10}
---- !u!1 &1148677411 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7531929448491432393, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
-  m_PrefabInstance: {fileID: 4526511954568329210}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1148677416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1148677411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c88c589dea61af8409f5d66f9477c5d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1156359855
 GameObject:
   m_ObjectHideFlags: 0
@@ -31478,30 +31461,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3456232696248572309, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
-      propertyPath: infectcut
-      value: 
-      objectReference: {fileID: 1816768801}
-    - target: {fileID: 3456232696248572309, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
-      propertyPath: recruitedNPC.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3456232696248572309, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
-      propertyPath: 'recruitedNPC.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1350113573695036299, guid: 7ca46829c368acb4d84afc35bbfd606a, type: 3}
-    - target: {fileID: 3456232696248572309, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
-      propertyPath: 'recruitedNPC.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8126542374114915180, guid: 5ccc216a96c69b543a002faa29f83a6e, type: 3}
-    - target: {fileID: 3456232696248572309, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
-      propertyPath: 'recruitedNPC.Array.data[2]'
-      value: 
-      objectReference: {fileID: 7928333341679801934, guid: 39cf7b5116165e542b42ebbd601fe108, type: 3}
-    - target: {fileID: 3456232696248572309, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
-      propertyPath: 'recruitedNPC.Array.data[3]'
-      value: 
-      objectReference: {fileID: 1219907858371510686, guid: 9edb26ce5396dab4e99c813c19de3d66, type: 3}
     - target: {fileID: 5148508553817909043, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -31549,10 +31508,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7531929448491432393, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1148677416}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce18a138417fb0b409d8d233f69ab840, type: 3}
 --- !u!65 &4609294801897362819
 BoxCollider:

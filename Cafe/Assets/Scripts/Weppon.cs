@@ -12,7 +12,7 @@ public class Weppon : MonoBehaviour
     public int currentClip = 5;
     public int maxClip = 5;
     public TMPro.TMP_Text clipText;
-
+    private GameManager gameManager;
 
     public AudioClip gunshotSound; 
     public AudioSource audioSource;
@@ -22,30 +22,33 @@ public class Weppon : MonoBehaviour
     {
         currentClip = 5;
         clipText.text = "Ammo : " + currentClip.ToString();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     // Update is called once per frame
     void Update()
     {
-         
 
-     if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (!gameManager.isPaused)
         {
-            if (currentClip > 0)
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-               
-                FireWeapon();
-            }
-           
-            //FPlayAudioGun();
-        }
+                if (currentClip > 0)
+                {
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            if (currentClip <= 0)
-            {
-                Reload();
+                    FireWeapon();
+                }
+
+                //FPlayAudioGun();
             }
-          
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                if (currentClip <= 0)
+                {
+                    Reload();
+                }
+
+            }
         }
     }
 
