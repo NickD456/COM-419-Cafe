@@ -79,7 +79,8 @@ public class CustomerSpawner : MonoBehaviour
         {
             GameObject newNPC = null;
             int randomCustOrNPC = Random.Range(0, 8);
-          
+            
+
             int randomInfect = Random.Range(0, 10);
            
 

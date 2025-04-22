@@ -14,6 +14,8 @@ public class LootingSpawn : MonoBehaviour
     public GameObject spot3Talk;
     public GameObject spot4Talk;
     private GameManager gameManager;
+    public RuntimeAnimatorController sittingController; // Assign in Inspector
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -49,7 +51,11 @@ public class LootingSpawn : MonoBehaviour
             GameObject newNPC = Instantiate(gameManager.recruitedNPC[0], spot1.transform.position, rotation);
             Destroy(newNPC.GetComponent<NavMeshAgent>());
             Destroy(newNPC.GetComponent<Rigidbody>());
-            newNPC.AddComponent<AnimeSet1>();
+            Animator animator = newNPC.GetComponent<Animator>();
+            if (animator != null && sittingController != null)
+            {
+                animator.runtimeAnimatorController = sittingController;
+            }
             spot1Talk.SetActive(true);
 
         }
@@ -59,8 +65,12 @@ public class LootingSpawn : MonoBehaviour
             GameObject newNPC = Instantiate(gameManager.recruitedNPC[1], spot2.transform.position, rotation);
             Destroy(newNPC.GetComponent<NavMeshAgent>());
             Destroy(newNPC.GetComponent<Rigidbody>());
-            newNPC.AddComponent<AnimeSet1>();
-            
+            Animator animator = newNPC.GetComponent<Animator>();
+            if (animator != null && sittingController != null)
+            {
+                animator.runtimeAnimatorController = sittingController;
+            }
+
         }
         if (gameManager.recruitedNPC[2] != null)
         {
@@ -69,8 +79,12 @@ public class LootingSpawn : MonoBehaviour
             GameObject newNPC = Instantiate(gameManager.recruitedNPC[2], spot3.transform.position, rotation);
             Destroy(newNPC.GetComponent<NavMeshAgent>());
             Destroy(newNPC.GetComponent<Rigidbody>());
-            newNPC.AddComponent<AnimeSet1>();
-           
+            Animator animator = newNPC.GetComponent<Animator>();
+            if (animator != null && sittingController != null)
+            {
+                animator.runtimeAnimatorController = sittingController;
+            }
+
         }
         if (gameManager.recruitedNPC[3] != null)
         {
@@ -79,8 +93,12 @@ public class LootingSpawn : MonoBehaviour
             GameObject newNPC = Instantiate(gameManager.recruitedNPC[3], spot4.transform.position, rotation);
             Destroy(newNPC.GetComponent<NavMeshAgent>());
             Destroy(newNPC.GetComponent<Rigidbody>());
-            newNPC.AddComponent<AnimeSet1>();
-           
+            Animator animator = newNPC.GetComponent<Animator>();
+            if (animator != null && sittingController != null)
+            {
+                animator.runtimeAnimatorController = sittingController;
+            }
+
         }
     }
 }

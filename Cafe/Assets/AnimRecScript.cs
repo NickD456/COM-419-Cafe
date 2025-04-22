@@ -16,7 +16,7 @@ public class AnimRecScript : MonoBehaviour
     {
         if (gameManager.hasGun == true)
         {
-            Debug.Log("Has Gun");
+          
             anim1.SetBool("HasGun", true);
             Transform child = this.transform.Find("Gun");
             if (child != null)
@@ -27,7 +27,7 @@ public class AnimRecScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("Does not have gun");
+           
             anim1.SetBool("HasGun", false);
             Transform child = this.transform.Find("Gun");
             if (child != null)
