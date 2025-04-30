@@ -37,6 +37,7 @@ public GameObject bulletPrefab;
                     shooter.audioSource = audio;
                 }
             }
+            gameManager.spawn4 = true;
         }
         if (gameManager.recruitedNPC[1] != null) {
             Quaternion rotation = Quaternion.Euler(0, 90, 0);
@@ -54,7 +55,8 @@ public GameObject bulletPrefab;
                     shooter.audioSource = audio;
                 }
             }
-            }
+            gameManager.spawn1 = true;
+        }
 
         if (gameManager.recruitedNPC[2] != null)
         {
@@ -72,6 +74,7 @@ public GameObject bulletPrefab;
                     shooter.audioSource = audio;
                 }
             }
+            gameManager.spawn2 = true;
         }
         if (gameManager.recruitedNPC[3] != null)
         {
@@ -89,6 +92,7 @@ public GameObject bulletPrefab;
                     shooter.audioSource = audio;
                 }
             }
+            gameManager.spawn3 = true;
         }
         
 

@@ -34,6 +34,10 @@ public class GameManager : MonoBehaviour
     public bool letInfectIn = false;
     public bool hasGun = false;
     public bool shooting = false;
+    public bool spawn1 = false;
+    public bool spawn2 = false;
+    public bool spawn3 = false;
+    public bool spawn4 = false;
 
 
 

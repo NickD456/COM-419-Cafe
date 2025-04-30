@@ -13,6 +13,7 @@ public class Weppon : MonoBehaviour
     public int maxClip = 5;
     public TMPro.TMP_Text clipText;
     private GameManager gameManager;
+    public GameObject reloadText;
 
     public AudioClip gunshotSound; 
     public AudioSource audioSource;
@@ -27,6 +28,14 @@ public class Weppon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(currentClip <= 0)
+        {
+            reloadText.SetActive(true);
+        }
+        else
+        {
+            reloadText.SetActive(false);
+        }
 
         if (!gameManager.isPaused)
         {
