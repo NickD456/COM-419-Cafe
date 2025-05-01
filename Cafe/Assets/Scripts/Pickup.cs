@@ -34,6 +34,8 @@ public class Pickup : MonoBehaviour
     public GameObject bookMatcha;
     public GameObject bookRad;
     public GameObject bookHoney;
+    public GameObject trashText;
+    public bool canDrop = false;    
 
     public AudioClip milksound;
     AudioSource milks;
@@ -44,7 +46,7 @@ public class Pickup : MonoBehaviour
 
     private Vector3 originalItem;
 
-    private DrinkManager drinkManager;
+    private static DrinkManager drinkManager;
     private GameManager gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -90,6 +92,8 @@ public class Pickup : MonoBehaviour
                
 
             }
+
+          
         }
         else if (canInteract == true)
         {
@@ -106,15 +110,11 @@ public class Pickup : MonoBehaviour
                 FlipPage();
             }
         }
-        else
+        else if (canDrop == true)
         {
             if (Input.GetKeyDown("e"))
             {
-                if (hasItem)
-                {
-                    DropObject();
-                    
-                }
+                DropObject();
             }
         }
         if (canGive)
@@ -124,9 +124,9 @@ public class Pickup : MonoBehaviour
                 GiveDrink();
             }
         }
-        
+        Debug.Log(drinkManager.orderComp);
 
-        if(customerHands == null)
+        if (customerHands == null)
         {
             customerHands = GameObject.FindWithTag("CustomerHands");
             customer = GameObject.FindWithTag("Customer");
@@ -264,7 +264,14 @@ public class Pickup : MonoBehaviour
             canGive = true;
         }
 
-        if((other.gameObject.tag == "Book"))
+        if(other.gameObject.tag == "trash" && heldItem.name == "Cup(Clone)")
+        {
+            trashText.SetActive(true);
+            canDrop = true;
+            
+        }
+
+        if ((other.gameObject.tag == "Book"))
         {
             isBook = true;
             bookText.SetActive(true);
@@ -281,6 +288,9 @@ public class Pickup : MonoBehaviour
         GiveText.SetActive(false);
         isBook = false;
         bookText.SetActive(false);
+        trashText.SetActive(false);
+        canDrop = false;
+        canGive = false;
 
     }
 
@@ -289,7 +299,7 @@ public class Pickup : MonoBehaviour
         Destroy(heldItem);
         hasItem = false;
         gameManager.SubMoney(5);
-        drinkManager.Reset();
+        drinkManager.ResetDrinkState();
     }
 
     private void GetTea()
@@ -389,6 +399,7 @@ public class Pickup : MonoBehaviour
         heldItem = custItem;
         Destroy(heldItem);
         heldItem = null;
+        customer = null;
     }
 
     void FlipPage()

@@ -26,6 +26,7 @@ TagManager:
   - Recruit NPC4
   - Infected
   - npcspawn
+  - trash
   layers:
   - Default
   - TransparentFX

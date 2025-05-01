@@ -10,7 +10,7 @@ public class NavScript : MonoBehaviour
     private GameObject doorSpot;
     private GameObject recruitSpot;
     private CustomerSpawner customerSpawner;
-    private static DrinkManager drinkManager;
+    private  DrinkManager drinkManager;
     private GameManager gameManager;
     private Animator anim1;
 
@@ -80,17 +80,14 @@ public class NavScript : MonoBehaviour
     {
         if (other.gameObject.tag == "End Spot")
         {
-            
-            drinkManager.Reset();
-            customerSpawner.RemoveNPCFromList(this.gameObject);
-            Destroy(this.gameObject);
+
             gameManager.doorClose = true;
-            
+
 
         }
         if (other.gameObject.tag == "Recruit Spot")
         {
-            drinkManager.Reset();
+            drinkManager.ResetDrinkState();
             gameManager.doorClose = true;
             
 

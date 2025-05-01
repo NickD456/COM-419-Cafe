@@ -57,7 +57,7 @@ public class RadOrder : MonoBehaviour
         if (drinkManager.hasLid && drinkManager.hasMilk && drinkManager.hasRad && drinkManager.hasTea)
         {
             correctOrder = true;
-            drinkManager.Reset();
+            
             Debug.Log("order right");
             child = null;
             gameManager.AddMoney(7);
@@ -74,7 +74,7 @@ public class RadOrder : MonoBehaviour
         {
             Debug.Log("order wrong");
             correctOrder = false;
-            drinkManager.Reset();
+           
             child = null;
             gameManager.SubMoney(5);
             orderTaken = true;

@@ -51,7 +51,7 @@ public class BrownSugarOrder : MonoBehaviour
         if (drinkManager.hasLid && drinkManager.hasMilk && drinkManager.hasBrownSugar && drinkManager.hasTea)
         {
             correctOrder = true;
-            drinkManager.Reset();
+           
             Debug.Log("order right");
             child = null;
             gameManager.AddMoney(7);
@@ -69,7 +69,7 @@ public class BrownSugarOrder : MonoBehaviour
         {
             Debug.Log("order wrong");
             correctOrder = false;
-            drinkManager.Reset();
+           
             child = null;
             gameManager.SubMoney(5);
 

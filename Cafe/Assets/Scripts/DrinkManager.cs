@@ -25,20 +25,21 @@ public class DrinkManager : MonoBehaviour
         orderComp = false;
         hasRad = false;
         hasHoney = false;
+        Instance = this;
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
-        if (gameManager.dayNum > 1)
+        if (gameManager.dayNum > 10)
         {
-            gameManager.money -= 10;
+            gameManager.money -= 30;
         }
         else if (gameManager.dayNum > 4)
         {
             gameManager.money -= 20;
         }
-        else if (gameManager.dayNum > 10)
+        else if (gameManager.dayNum > 1)
         {
-            gameManager.money -= 30;
+            gameManager.money -= 10;
         }
 
     }
@@ -83,7 +84,7 @@ public class DrinkManager : MonoBehaviour
         hasHoney = true;
     }
 
-    public void Reset()
+    public void ResetDrinkState()
     {
         hasLid = false;
         hasMatcha= false;
@@ -98,7 +99,7 @@ public class DrinkManager : MonoBehaviour
         gameManager.canEnter = false;
         gameManager.canTalk = true;
         gameManager.isTalking = false;
-        
+        Debug.Log("Reset on: " + gameObject.name);
     }
 
     public void setOrder()

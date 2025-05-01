@@ -98,7 +98,7 @@ public class CustomerSpawner : MonoBehaviour
                 case 4:
                 case 5:
                 case 6:
-                    if (randomInfect == 0)
+                    if (randomInfect == 0 || randomInfect == 1)
                     {
                         newNPC = Instantiate(infectNPC[randomCustOrNPC], spawnPoint.position, Quaternion.identity);
 
@@ -256,7 +256,15 @@ public class CustomerSpawner : MonoBehaviour
         }
 
         fadeImage.color = endColor;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if(gameManager.money <= 0)
+        {
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+       
     }
 
 }

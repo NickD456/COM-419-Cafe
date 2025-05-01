@@ -15,7 +15,7 @@ public class DayGameOver : MonoBehaviour
     {
         if(gameManager.money < 0)
         {
-            SceneManager.LoadScene(1);
+           
         }
     }
 }
